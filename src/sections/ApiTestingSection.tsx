@@ -14,10 +14,11 @@ export const ApiTestingSection: React.FC = () => {
   const currentResponse = selectedEndpoint.responses[selectedResponseIndex] || selectedEndpoint.responses[0];
 
   const handleSendRequest = () => {
+    // Frontend-only simulation: no fetch, API client, socket, or external service is used.
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 300);
+    }, 320);
   };
 
   const getMethodBadgeVariant = (method: string) => {
@@ -41,11 +42,18 @@ export const ApiTestingSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeading
-          badgeText="API Testing Laboratory"
+          badgeText="API Simulation Laboratory"
           badgeVariant="blue"
           title="REST API & Backend Contract Testing"
-          subtitle="Deep verification of HTTP status codes, Bearer JWT auth flows, payload contracts, negative boundaries, and latency using Postman and Swagger."
+          subtitle="Frontend-only contract testing demo with synthetic request data, local mock responses, status scenarios, assertions, headers, and latency."
         />
+
+        <div className="mb-6 flex justify-center">
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/30 px-3 py-1.5 text-[11px] font-mono font-semibold uppercase tracking-wide text-emerald-300">
+            <ShieldCheck className="h-3.5 w-3.5" />
+            Interactive API Simulation — No Production Data
+          </span>
+        </div>
 
         {/* API Testing Playground Console */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -200,7 +208,7 @@ export const ApiTestingSection: React.FC = () => {
               <div className="flex items-center gap-3 text-slate-400 text-[11px]">
                 <span className="flex items-center gap-1">
                   <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-cyan-400" />
-                  {currentResponse.headers["X-Response-Time"] || "35ms"}
+                  {currentResponse.headers["X-Demo-Latency"] || "100ms"}
                 </span>
                 <span className="flex items-center gap-1 text-emerald-400">
                   <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
@@ -282,7 +290,7 @@ export const ApiTestingSection: React.FC = () => {
 
             {/* Bottom Status bar */}
             <div className="p-3 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-slate-500">
-              <span>Interactive Postman & Swagger Simulation</span>
+              <span>Local Browser Mock • No Network Requests</span>
               <span>RFC 8259 Compliant</span>
             </div>
 

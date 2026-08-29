@@ -38,9 +38,9 @@ export const metricCards: MetricCard[] = [
   },
   {
     id: "projects",
-    value: "4+ Production Platforms",
+    value: "4+ Sanitized Case Studies",
     label: "Web & Mobile Applications",
-    description: "Campus Closet, SEAL 360, Tylon, and M2A",
+    description: "Fictional commerce, workflow, scheduling, and media demos",
     iconName: "Layers"
   },
   {
@@ -259,30 +259,30 @@ export const experienceTimeline: ExperienceItem[] = [
   {
     id: "exp-1",
     role: "Quality Assurance Engineer",
-    company: "Alpha IT Managed Services",
+    company: "Confidential Software Services Company",
     period: "June 2025 – Present",
     type: "Full-time / Core QA",
     location: "Mohali, India",
-    summary: "Leading end-to-end quality assurance for E-commerce web and mobile applications (Android & iOS). Executing manual and automated test suites, conducting API verification, load testing with Locust, and security testing with OWASP ZAP across mission-critical products.",
+    summary: "Leading end-to-end quality assurance for web and mobile applications (Android & iOS). Executing manual and automated test suites, API verification, local load simulations, and security testing across sanitized case studies.",
     responsibilities: [
       "Performed end-to-end testing for E-commerce web and mobile applications across Android and iOS platforms.",
       "Executed manual and automated test cases using Selenium, Playwright, and Appium, improving test coverage and efficiency.",
       "Conducted REST API testing using Postman and Swagger to validate backend microservices and response schemas.",
       "Performed performance and security testing using tools like Locust and OWASP ZAP to eliminate bottlenecks before release.",
       "Collaborated with cross-functional development teams to ensure high-quality releases and production stability.",
-      "Contributed to core projects including Campus Closet, M2A, Tylon, and SEAL 360, ensuring defect-free deployments."
+      "Contributed to multiple confidential client projects; all public examples in this portfolio are fictionalized."
     ],
     technologies: ["Selenium", "Playwright", "Appium", "Python", "Pytest", "Postman", "Locust", "OWASP ZAP", "DBeaver", "MongoDB", "Jira", "Git"],
     achievements: [
       "Built scalable automated regression suites using Playwright and Selenium, significantly reducing regression cycle times.",
-      "Uncovered critical financial wallet calculation race conditions and token expiration defects prior to production.",
+      "Uncovered account calculation race conditions and session expiration defects before release.",
       "Instituted standardized API test collections and defect reporting templates across multiple active sprint tracks."
     ]
   },
   {
     id: "exp-2",
     role: "Quality Analyst (Internship)",
-    company: "Alpha IT Managed Services",
+    company: "Confidential Software Services Company",
     period: "Feb 2025 – May 2025",
     type: "Internship / QA & Backend",
     location: "Mohali, India",
@@ -334,27 +334,27 @@ export const certificationsList: CertificationItem[] = [
 
 export const featuredProjects: ProjectCaseStudy[] = [
   {
-    id: "campus-closet",
-    title: "Campus Closet",
-    subtitle: "Peer-to-Peer E-Commerce & Rental Platform",
-    type: "Marketplace / Web & Mobile Application (Android & iOS)",
+    id: "demo-commerce-platform",
+    title: "Demo Commerce Platform",
+    subtitle: "Fictional Web & Mobile Storefront",
+    type: "Synthetic Case Study / Web & Mobile Application",
     featured: true,
-    tagline: "High-volume E-commerce and rental marketplace platform featuring listings, payments, digital wallets, real-time WebSocket chat, and multi-platform mobile apps.",
+    tagline: "Sanitized commerce case study featuring a catalog, checkout, account summaries, notifications, and multi-platform test coverage.",
     badgeColor: "emerald",
     iconName: "ShoppingBag",
-    summary: "Campus Closet is an interactive peer-to-peer marketplace platform where users buy, rent, and list items, communicate through real-time chat, execute monetary transactions with digital wallets, and track delivery logistics across web and mobile apps.",
+    summary: "This fictional storefront demonstrates QA coverage for catalog browsing, checkout, account summaries, notifications, and delivery status across web and mobile apps.",
     role: "QA Engineer (Manual, Selenium, Playwright, Appium & API)",
     testingStrategy: [
-      "Multi-layered testing strategy covering core e-commerce checkout funnels, wallet balances, and real-time state synchronization.",
+      "Multi-layered testing strategy covering checkout funnels, demo account balances, and client state synchronization.",
       "Automated regression suite for web checkout and listing creation using Selenium and Playwright with Python.",
       "Mobile functional testing on Android and iOS devices using Appium and manual exploratory sessions.",
-      "Security audit for token expiration, session replay, and wallet balance calculation integrity."
+      "Security audit for session expiration, replay resistance, and account calculation integrity."
     ],
     responsibilities: [
       "Functional, regression, smoke, and exploratory testing across responsive web and mobile apps.",
       "Payment gateway integration testing (successful charges, failed payments, webhooks, refund flows).",
-      "Digital wallet balance integrity testing (top-ups, debits, escrow holds, dispute resolutions).",
-      "Real-time WebSocket chat testing for message delivery, unread counts, and connection drop recovery.",
+      "Synthetic account balance integrity testing for credits, debits, pending amounts, and adjustments.",
+      "Notification delivery testing for updates, unread counts, and connection recovery.",
       "Security vulnerability testing with OWASP ZAP to inspect token and authorization boundaries."
     ],
     functionalTesting: [
@@ -380,14 +380,14 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ],
     tools: ["Selenium", "Playwright", "Appium", "Python", "Postman", "Jira", "OWASP ZAP", "MongoDB"],
     challenges: [
-      "Ensuring wallet balances stayed perfectly synchronized between frontend UI, payment webhooks, and backend ledger.",
-      "Testing real-time WebSocket chat state recovery after sudden network drops and app backgrounding on mobile devices."
+      "Ensuring synthetic account totals stayed synchronized between the UI, mock callbacks, and local fixtures.",
+      "Testing notification state recovery after network drops and app backgrounding on mobile devices."
     ],
     bugsDiscovered: [
       {
-        title: "Wallet Balance Display Desync",
-        description: "Discovered an edge case where refund transactions updated the backend database correctly but failed to emit the WebSocket event, causing the UI wallet balance to show stale data until hard refresh.",
-        impact: "Prevented potential user confusion and financial dispute support tickets."
+        title: "Account Summary Display Desync",
+        description: "Fictional case: an adjustment updated the mock data store but did not emit a client notification, leaving the displayed account total stale until refresh.",
+        impact: "Demonstrates validation of eventual consistency and user-facing recovery states."
       },
       {
         title: "Session Expiration in Multi-Tab Checkout",
@@ -401,52 +401,52 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ]
   },
   {
-    id: "seal360",
-    title: "SEAL 360",
-    subtitle: "Enterprise Procurement & Vendor Management",
-    type: "Procurement / Contract / Vendor Management Platform",
+    id: "demo-workflow-platform",
+    title: "Demo Workflow Platform",
+    subtitle: "Fictional Order & Approval Management",
+    type: "Synthetic Case Study / Workflow Application",
     featured: true,
-    tagline: "Enterprise workflow application managing multi-tier procurement approvals, vendor lifecycles, asset contracts, and automated invoicing.",
+    tagline: "Sanitized workflow case study covering order requests, configurable approvals, service records, and document checks.",
     badgeColor: "blue",
     iconName: "FileCheck",
-    summary: "SEAL 360 is a mission-critical enterprise governance platform designed for managing complex procurement lifecycles, vendor onboarding, contract approvals, invoice auditing, and departmental budget enforcement.",
+    summary: "This fictional workflow application demonstrates testing of order requests, configurable approvals, service-provider records, document review, and spending rules.",
     role: "QA Engineer (Workflow, API, Database & Role-Based Access Control)",
     testingStrategy: [
-      "Comprehensive matrix testing for multi-level approval hierarchies and role permissions (Admin, Procurement Manager, Approver, Vendor).",
-      "Database integrity validation via DBeaver ensuring financial ledger updates match approval audit logs.",
+      "Comprehensive matrix testing for multi-level approval hierarchies and fictional role permissions.",
+      "Database integrity validation ensuring synthetic account updates match approval audit logs.",
       "UI design validation for complex enterprise tables, data filters, and modal approval workflows."
     ],
     responsibilities: [
-      "End-to-end testing of procurement requisition workflows from draft to final sign-off.",
+      "End-to-end testing of generic order-request workflows from draft to final sign-off.",
       "Role-Based Access Control (RBAC) testing across organizational permission levels.",
       "Backend database validation using SQL queries in DBeaver to verify foreign key integrity and audit logs.",
-      "API request validation for purchase order generation, invoice matching, and vendor status updates.",
+      "API request validation for demo order generation, document matching, and service-record updates.",
       "Defect reporting and resolution verification in Jira."
     ],
     functionalTesting: [
       "Multi-tier approval workflows with conditional routing based on budget thresholds ($5k vs $50k+).",
-      "Vendor onboarding verification with document attachment validation (PDF/tax docs).",
+      "Service-record setup verification with fictional document attachments.",
       "Contract expiration notification triggers and automated renewal workflows.",
       "Invoice two-way and three-way matching against purchase orders."
     ],
     automationApproach: [
-      "Automated sanity suites for role permissions and requisition status transitions using Python.",
+      "Automated sanity suites for role permissions and order-request status transitions using Python.",
       "Data-driven testing with parameterized test datasets for multiple user tiers."
     ],
     apiTesting: [
-      "Extensive API validation in Postman for CRUD operations on vendor entities, contracts, and line items.",
+      "Extensive API validation against synthetic service records, agreements, and line items.",
       "Tested boundary values on financial amounts and currency conversions.",
       "Verified error handling for invalid UUIDs and unauthorized department access."
     ],
     tools: ["Jira", "Postman", "DBeaver", "SQL", "Swagger", "Chrome DevTools"],
     challenges: [
-      "Testing deeply nested conditional approval workflows where approval routes dynamically branch depending on department budget limits and vendor risk scores."
+      "Testing conditional approval workflows that branch using fictional spending limits and generic risk levels."
     ],
     bugsDiscovered: [
       {
         title: "Bypass in Multi-Level Approval State",
-        description: "Identified a vulnerability where a requisition submitter with low-tier rights could trigger the 'Approve' API endpoint directly via ID manipulation, bypassing the required manager review.",
-        impact: "Protected enterprise financial governance by enforcing strict server-side authorization checks."
+        description: "Fictional case: a low-privilege submitter could call a demo approval action directly by changing a synthetic identifier.",
+        impact: "Demonstrates strict server-side authorization checks without exposing an internal workflow."
       },
       {
         title: "Invoice Line Item Rounding Mismatch",
@@ -460,63 +460,63 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ]
   },
   {
-    id: "tylon",
-    title: "Tylon (Talyn360)",
-    subtitle: "Enterprise Recruitment & Talent Lifecycle",
-    type: "Recruitment Management Platform",
+    id: "demo-scheduling-platform",
+    title: "Demo Scheduling Platform",
+    subtitle: "Fictional Records & Appointment Workflow",
+    type: "Synthetic Case Study / Scheduling Application",
     featured: true,
-    tagline: "High-scale recruitment automation system covering candidate pipelines, interview scheduling, automated evaluations, and candidate analytics.",
+    tagline: "Sanitized scheduling case study covering generic records, appointments, form submissions, and aggregate reporting.",
     badgeColor: "purple",
     iconName: "Users",
-    summary: "Tylon is an enterprise recruitment management platform facilitating candidate lifecycle tracking, job requisition publishing, automated interview scheduling, evaluation scorecards, and hiring analytics.",
+    summary: "This fictional scheduling application demonstrates record lifecycle testing, appointment coordination, evaluation forms, and aggregate analytics.",
     role: "Automation & Performance QA Engineer",
     testingStrategy: [
       "Built end-to-end regression automation suite with Playwright and Selenium + Python + Pytest.",
-      "Conducted API load and stress testing using Locust to evaluate candidate bulk-import throughput and concurrent interviewer score submissions.",
-      "Comprehensive functional and API testing across candidate pipelines and interview scheduling."
+      "Conducted local load simulations to evaluate demo record imports and concurrent form submissions.",
+      "Comprehensive functional and API testing across generic record and appointment workflows."
     ],
     responsibilities: [
-      "Authored and executed automation scripts for candidate pipeline transitions.",
-      "Created and executed Locust performance test scenarios simulating concurrent recruiter logins and candidate searches.",
-      "Performed API testing in Postman for candidate data ingestion, status mutations, and calendar sync.",
-      "Verified database records in SQL and DBeaver for candidate history logs, interview feedback, and score aggregation.",
+      "Authored and executed automation scripts for generic record transitions.",
+      "Created local performance scenarios simulating concurrent demo sign-ins and searches.",
+      "Performed API contract testing for synthetic data ingestion, status changes, and calendar sync.",
+      "Verified synthetic history logs, form feedback, and score aggregation.",
       "Reported and tracked defects in Jira with complete reproduction steps and performance metrics."
     ],
     functionalTesting: [
-      "Candidate pipeline stages: Applied → Screened → Interview Scheduled → Evaluated → Offer → Hired.",
-      "Bulk candidate resume upload and parsing validation.",
-      "Interview calendar integration with timezone conversion validation.",
+      "Generic record stages: Created → Reviewed → Scheduled → Evaluated → Closed.",
+      "Bulk synthetic document upload and parsing validation.",
+      "Appointment calendar integration with timezone conversion validation.",
       "Custom evaluation rubric score calculation and feedback submission."
     ],
     automationApproach: [
       "Playwright + Python and Selenium test framework utilizing Page Object Model (POM).",
-      "Dynamic test fixtures in Pytest for creating clean candidate records per test run.",
+      "Dynamic test fixtures in Pytest for creating clean synthetic records per test run.",
       "Headless automated test execution with automated screenshot and trace capture on failure."
     ],
     apiTesting: [
-      "Tested RESTful endpoints for candidate filtering, pagination, and bulk status updates.",
+      "Tested fictional REST endpoints for record filtering, pagination, and bulk status updates.",
       "Validated auth tokens and rate limiting on public application submission endpoints."
     ],
     performanceTesting: [
-      "Simulated 100+ concurrent recruiters submitting interview scorecards simultaneously using Locust.",
-      "Measured API response times under load, identifying slow database joins on candidate search queries.",
+      "Simulated concurrent demo users submitting evaluation forms using local load fixtures.",
+      "Measured illustrative response times under load for generic search queries.",
       "Generated Locust test reports analyzing RPS, average latency, and P95 response times."
     ],
     tools: ["Playwright", "Selenium", "Python", "Pytest", "Locust", "Postman", "Jira", "SQL", "DBeaver"],
     challenges: [
-      "Simulating realistic concurrent user loads on candidate search endpoints with complex filtering criteria.",
+      "Simulating concurrent user loads on fictional search endpoints with generic filters.",
       "Managing test data state isolation during parallel automated test runs."
     ],
     bugsDiscovered: [
       {
-        title: "Candidate Search Query Performance Degradation",
-        description: "Discovered that candidate search API response time escalated from 250ms to 4.2s when filtering across multiple skills under 50 concurrent users due to an unindexed database column.",
-        impact: "Prompted database query optimization and indexing, reducing latency under load by 85%."
+        title: "Demo Search Query Performance Degradation",
+        description: "Fictional case: a synthetic search dataset exposed an unindexed field as concurrency increased.",
+        impact: "Demonstrates query analysis and index validation using illustrative metrics."
       },
       {
-        title: "Interview Timezone Offset Bug",
-        description: "Found an issue where interviews scheduled between recruiters in UTC+5:30 and candidates in UTC-5 resulted in a 1-day shift in the calendar invite payload.",
-        impact: "Prevented critical missed interview appointments."
+        title: "Appointment Timezone Offset Bug",
+        description: "Fictional case: demo appointments created across two sample time zones shifted by one calendar day.",
+        impact: "Demonstrates timezone boundary and calendar payload testing."
       }
     ],
     improvements: [
@@ -525,33 +525,33 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ]
   },
   {
-    id: "m2a",
-    title: "M2A",
-    subtitle: "Video & Fitness Motion Analysis App",
-    type: "Video / Fitness / Analysis Application (Android & iOS)",
+    id: "demo-media-platform",
+    title: "Demo Media Platform",
+    subtitle: "Fictional Media Processing App",
+    type: "Synthetic Case Study / Media Application",
     featured: true,
-    tagline: "Mobile fitness app combining real-time camera feeds, video upload analysis, motion tracking telemetry, and personalized workout reports.",
+    tagline: "Sanitized mobile case study combining file capture, upload simulation, generic media analysis, and demo reports.",
     badgeColor: "amber",
     iconName: "Video",
-    summary: "M2A is a cutting-edge video and fitness analysis platform featuring mobile camera integration, video recording and cloud processing, motion telemetry analysis, user fitness tracking, and automated performance reports.",
+    summary: "This fictional media application demonstrates mobile file capture, resilient uploads, asynchronous analysis, and synthetic report generation.",
     role: "QA Engineer (Mobile, Video Processing & Functional Testing)",
     testingStrategy: [
       "Mobile device testing across different camera aspect ratios, resolutions, and OS versions (Android & iOS).",
-      "Video processing pipeline validation from client recording to cloud ingestion, transcoding, analysis, and report generation.",
-      "UI/UX validation of video playback controls, frame scrubbing, and telemetry overlays."
+      "Media pipeline validation from client capture to mock ingestion, processing, analysis, and report generation.",
+      "UI/UX validation of playback controls, frame scrubbing, and generic analysis overlays."
     ],
     responsibilities: [
       "Tested camera recording workflows on iOS and Android devices under various lighting and orientation conditions.",
       "Validated video upload retry mechanisms, background upload persistence, and failure recovery.",
-      "Conducted functional and regression testing on user profile management, goal tracking, and workout logs.",
+      "Conducted functional and regression testing on fictional profile settings, preferences, and activity logs.",
       "Verified report generation accuracy, comparing raw video metadata with displayed metrics.",
       "Performed UI/UX testing for video scrubber widgets and metric graphs."
     ],
     functionalTesting: [
       "Camera permission handling, resolution switching, and front/rear camera toggle.",
       "Video recording pause, resume, cancel, and auto-save workflows.",
-      "Workout history synchronization between mobile device and cloud storage.",
-      "Generated fitness progress reports and metric charts."
+      "Demo activity synchronization between a mobile device and mock storage.",
+      "Generated synthetic progress reports and metric charts."
     ],
     automationApproach: [
       "Exploratory mobile testing coupled with automated API health checks for video upload and status polling endpoints."
@@ -563,12 +563,12 @@ export const featuredProjects: ProjectCaseStudy[] = [
     tools: ["Mobile Testing (Android/iOS)", "Appium", "Postman", "Jira", "MongoDB", "Chrome DevTools"],
     challenges: [
       "Testing video upload resilience on mobile devices experiencing intermittent 4G/5G signal drops.",
-      "Validating frame-accurate telemetry synchronization during video playback."
+      "Validating frame-accurate analysis overlay synchronization during media playback."
     ],
     bugsDiscovered: [
       {
         title: "Mobile Download & Offline Cache Persistence Failure",
-        description: "Identified a bug where downloaded workout videos were stored in temporary app cache without persistence flags, causing videos to be wiped whenever the OS cleared background memory.",
+        description: "Fictional case: downloaded demo media was stored in temporary cache without persistence flags and was removed under memory pressure.",
         impact: "Resolved offline playback failures for users with limited connectivity."
       },
       {
@@ -586,13 +586,13 @@ export const featuredProjects: ProjectCaseStudy[] = [
 export const bugHuntingCards: BugCard[] = [
   {
     id: "bug-1",
-    title: "Financial Wallet Calculation & Balance Discrepancy",
+    title: "Demo Account Calculation Discrepancy",
     category: "Financial / Calculation",
     severity: "Critical",
-    problem: "A subtle mismatch occurred between the user's displayed wallet balance and the backend ledger calculation when multiple partial rental refund transactions were processed in rapid succession.",
-    investigation: "Simulated rapid multi-tab refund requests and analyzed the database transaction logs in DBeaver while monitoring the API response payloads in Postman.",
-    finding: "Discovered an asynchronous race condition in the database transaction isolation level where read locks were released before the refund debit ledger committed.",
-    qaImpact: "Prevented financial discrepancies and accounting audit failures by enforcing strict serialized database transactions and idempotent API endpoints.",
+    problem: "Fictional case: a displayed account total differed from a synthetic backend calculation after several rapid demo adjustments.",
+    investigation: "Simulated concurrent browser actions and compared deterministic mock payloads with test database records.",
+    finding: "The scenario modeled a race condition where one calculated update completed after a stale read.",
+    qaImpact: "Demonstrates serialized updates and idempotency checks without using production-derived details.",
     toolsUsed: ["Postman", "DBeaver", "SQL", "Chrome DevTools"]
   },
   {
@@ -611,10 +611,10 @@ export const bugHuntingCards: BugCard[] = [
     title: "Real-time WebSocket Chat State Desynchronization",
     category: "Real-time & WebSockets",
     severity: "High",
-    problem: "In real-time marketplace conversations, messages sent immediately after temporary network reconnections appeared duplicated on the sender's screen but were omitted from the receiver's inbox.",
+    problem: "Fictional case: demo notifications sent immediately after a temporary reconnection appeared twice in one client and were absent in another.",
     investigation: "Used browser network throttling and simulated WebSocket connection drops while sending messages with unique client-side message IDs.",
     finding: "The WebSocket client lacked client-side deduplication and message ACK confirmation, sending duplicate frames without waiting for server sequence receipts.",
-    qaImpact: "Instituted message ACK confirmation protocols and client-side message deduplication, ensuring 100% reliable chat communication.",
+    qaImpact: "Demonstrates acknowledgement handling and client-side event deduplication.",
     toolsUsed: ["Chrome DevTools", "Postman WebSocket", "Appium"]
   },
   {
@@ -622,21 +622,21 @@ export const bugHuntingCards: BugCard[] = [
     title: "Mobile Offline Media Cache Persistence Failure",
     category: "Mobile Storage & State",
     severity: "Medium",
-    problem: "Downloaded fitness analysis videos were lost whenever the mobile app was closed or when the operating system executed memory garbage collection.",
+    problem: "Fictional case: downloaded demo media was lost when the mobile app closed or the operating system reclaimed temporary storage.",
     investigation: "Inspected device local storage directories on Android using adb and file explorers after triggering system memory pressure.",
     finding: "Downloaded media files were saved into the OS ephemeral `/cache` directory rather than the application's persistent `/files` document storage directory.",
-    qaImpact: "Ensured users can access downloaded analysis videos offline without consuming redundant mobile cellular bandwidth.",
+    qaImpact: "Demonstrates offline persistence validation for synthetic media files.",
     toolsUsed: ["Android File Explorer", "MobSF", "Mobile Device Testing"]
   },
   {
     id: "bug-5",
-    title: "Frontend Contract Spec vs API Response Data Mismatch",
+    title: "Frontend Demo Contract vs Mock Response Mismatch",
     category: "UI / Contract Validation",
     severity: "Medium",
-    problem: "Enterprise contract status badges in the procurement dashboard rendered incorrect warning colors and truncated long vendor tax identification numbers.",
-    investigation: "Compared UI design tokens, API schema response field types in Swagger, and CSS layout constraints against real-world enterprise dataset edge cases.",
-    finding: "Frontend components expected camelCase properties (`vendorTaxId`) whereas the backend API emitted snake_case (`vendor_tax_id`), causing undefined fallbacks and bad CSS wrapping.",
-    qaImpact: "Prevented UI breakage in production enterprise deployments by establishing strict Swagger/TypeScript data contract validation.",
+    problem: "Fictional status badges rendered incorrect colors and truncated long synthetic reference labels.",
+    investigation: "Compared UI tokens, a fictional OpenAPI schema, and CSS constraints against generated boundary datasets.",
+    finding: "The demo component expected `referenceLabel` while the mock fixture emitted `reference_label`, causing an undefined fallback.",
+    qaImpact: "Demonstrates strict OpenAPI and TypeScript contract validation using synthetic fields.",
     toolsUsed: ["Swagger", "Postman", "Chrome DevTools", "DBeaver"]
   }
 ];
@@ -754,121 +754,125 @@ export const qaProcessSteps: QaProcessStep[] = [
 
 export const mockApiEndpoints: ApiEndpointMock[] = [
   {
-    id: "auth-login",
-    name: "User Authentication (Login)",
+    id: "demo-auth-login",
+    name: "Demo User Sign-in",
     method: "POST",
-    path: "/api/v1/auth/login",
-    description: "Authenticates a user with credentials and issues JWT Access & Refresh tokens.",
+    path: "/api/demo/auth/login",
+    description: "Simulates a sign-in request using deterministic synthetic credentials.",
     requestHeaders: {
       "Content-Type": "application/json",
-      "X-Client-Version": "2.4.0"
+      "X-Demo-Client": "portfolio-api-lab"
     },
     requestBody: {
-      email: "tirtha.tester@example.com",
-      password: "••••••••••••"
+      email: "demo.user@example.invalid",
+      password: "demo-password"
     },
     responses: [
       {
         status: 200,
         statusText: "OK",
-        description: "Valid credentials supplied. Authentication successful.",
+        description: "Synthetic credentials accepted by the local simulation.",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          "Set-Cookie": "refreshToken=def456...; HttpOnly; Secure; SameSite=Strict",
-          "X-Response-Time": "42ms"
+          "Cache-Control": "no-store",
+          "X-Demo-Latency": "120ms"
         },
         body: {
           status: "success",
+          simulation: true,
           data: {
             user: {
-              id: "usr_99810a",
-              name: "Tirtha Sarathi Mohanty",
-              email: "tirtha.tester@example.com",
-              role: "QA_ENGINEER",
+              id: "demo_user_001",
+              name: "Demo User",
+              email: "demo.user@example.invalid",
+              role: "DEMO_TESTER",
               verified: true
             },
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-            expiresIn: 3600
+            token: "demo-token",
+            expiresIn: 900
           }
         },
         assertions: [
           { check: "Status code is 200 OK", passed: true },
-          { check: "Response contains JWT token string", passed: true },
-          { check: "User role matches QA_ENGINEER", passed: true },
-          { check: "Token expiration equals 3600s", passed: true }
+          { check: "Response contains a demo token placeholder", passed: true },
+          { check: "User role matches DEMO_TESTER", passed: true },
+          { check: "Response is marked as simulated", passed: true }
         ]
       },
       {
         status: 401,
         statusText: "Unauthorized",
-        description: "Invalid credentials or unauthorized login attempt.",
+        description: "Simulated rejection for an invalid demo request.",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          "X-Response-Time": "28ms"
+          "X-Demo-Latency": "80ms"
         },
         body: {
           status: "error",
-          errorCode: "AUTH_INVALID_CREDENTIALS",
-          message: "The email or password provided is incorrect.",
-          timestamp: "2026-08-30T00:30:00Z"
+          simulation: true,
+          errorCode: "DEMO_AUTH_REJECTED",
+          message: "The demo credentials were rejected.",
+          timestamp: "2026-01-15T10:30:00Z"
         },
         assertions: [
           { check: "Status code is 401 Unauthorized", passed: true },
-          { check: "Error code matches AUTH_INVALID_CREDENTIALS", passed: true },
-          { check: "No sensitive data or tokens exposed", passed: true }
+          { check: "Error code matches the demo contract", passed: true },
+          { check: "No credentials are returned", passed: true }
         ]
       }
     ]
   },
   {
-    id: "wallet-balance",
-    name: "Wallet Balance & Ledger",
+    id: "demo-account-balance",
+    name: "Account Balance",
     method: "GET",
-    path: "/api/v1/wallet/balance",
-    description: "Retrieves current available balance, pending holds, and currency.",
+    path: "/api/demo/account/balance",
+    description: "Returns a fixed synthetic account summary from local demo data.",
     requestHeaders: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsIn...",
+      "Authorization": "Bearer demo-token",
       "Accept": "application/json"
     },
     responses: [
       {
         status: 200,
         statusText: "OK",
-        description: "Wallet data retrieved successfully with active authorization.",
+        description: "Synthetic account data returned by the local simulation.",
         headers: {
           "Content-Type": "application/json",
-          "Cache-Control": "no-store, private",
-          "X-Response-Time": "35ms"
+          "Cache-Control": "no-store",
+          "X-Demo-Latency": "95ms"
         },
         body: {
           status: "success",
+          simulation: true,
           data: {
-            walletId: "wal_7721",
+            accountId: "demo_account_001",
             currency: "USD",
-            availableBalance: 420.50,
-            escrowHold: 35.00,
-            totalBalance: 455.50,
-            lastTransactionAt: "2026-08-29T18:22:10Z"
+            availableBalance: 100.00,
+            pendingAmount: 25.00,
+            totalBalance: 125.00,
+            lastTransactionAt: "2026-01-15T10:30:00Z"
           }
         },
         assertions: [
           { check: "Status code is 200 OK", passed: true },
-          { check: "availableBalance + escrowHold == totalBalance", passed: true },
+          { check: "availableBalance + pendingAmount equals totalBalance", passed: true },
           { check: "Currency matches ISO 4217 format", passed: true }
         ]
       },
       {
         status: 403,
         statusText: "Forbidden",
-        description: "User lacks permission to access requested wallet entity.",
+        description: "Simulated access denial for the demo account.",
         headers: {
           "Content-Type": "application/json",
-          "X-Response-Time": "19ms"
+          "X-Demo-Latency": "75ms"
         },
         body: {
           status: "error",
-          errorCode: "FORBIDDEN_RESOURCE_ACCESS",
-          message: "You do not have permission to view this financial account."
+          simulation: true,
+          errorCode: "DEMO_ACCESS_DENIED",
+          message: "This demo scenario does not allow account access."
         },
         assertions: [
           { check: "Status code is 403 Forbidden", passed: true },
@@ -878,63 +882,64 @@ export const mockApiEndpoints: ApiEndpointMock[] = [
     ]
   },
   {
-    id: "orders-create",
-    name: "Create Procurement Requisition",
+    id: "demo-order-create",
+    name: "Create Order Request",
     method: "POST",
-    path: "/api/v1/procurement/requisitions",
-    description: "Creates a new purchase requisition with line items, budget codes, and routing.",
+    path: "/api/demo/orders",
+    description: "Simulates creating a generic order from a fixed demo payload.",
     requestHeaders: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsIn...",
+      "Authorization": "Bearer demo-token",
       "Content-Type": "application/json"
     },
     requestBody: {
-      vendorId: "vnd_9041",
-      department: "Quality Assurance",
-      totalAmount: 1450.00,
+      productId: "demo_product_001",
+      quantity: 2,
+      totalAmount: 50.00,
       currency: "USD",
       items: [
-        { name: "Mobile Test Devices - Pixel & iPhone", qty: 2, unitPrice: 725.00 }
+        { name: "Demo Item", quantity: 2, unitPrice: 25.00 }
       ]
     },
     responses: [
       {
         status: 201,
         statusText: "Created",
-        description: "Requisition created successfully with generated ID.",
+        description: "Synthetic order created in browser memory.",
         headers: {
           "Content-Type": "application/json",
-          "Location": "/api/v1/procurement/requisitions/req_98124",
-          "X-Response-Time": "64ms"
+          "Location": "/api/demo/orders/demo_order_001",
+          "X-Demo-Latency": "140ms"
         },
         body: {
           status: "success",
+          simulation: true,
           data: {
-            requisitionId: "req_98124",
-            status: "PENDING_MANAGER_APPROVAL",
-            totalAmount: 1450.00,
-            approvalTier: "TIER_1_STANDARD",
-            createdAt: "2026-08-30T00:32:00Z"
+            orderId: "demo_order_001",
+            status: "DEMO_CREATED",
+            totalAmount: 50.00,
+            createdAt: "2026-01-15T10:30:00Z"
           }
         },
         assertions: [
           { check: "Status code is 201 Created", passed: true },
-          { check: "Initial status is PENDING_MANAGER_APPROVAL", passed: true },
-          { check: "Location header contains new resource URI", passed: true }
+          { check: "Initial status is DEMO_CREATED", passed: true },
+          { check: "Location header contains a demo resource path", passed: true }
         ]
       },
       {
         status: 400,
         statusText: "Bad Request",
-        description: "Validation error due to missing mandatory line item fields.",
+        description: "Simulated validation error for an incomplete demo order.",
         headers: {
           "Content-Type": "application/json",
-          "X-Response-Time": "22ms"
+          "X-Demo-Latency": "70ms"
         },
         body: {
           status: "error",
-          errorCode: "SCHEMA_VALIDATION_FAILED",
+          simulation: true,
+          errorCode: "DEMO_VALIDATION_FAILED",
           details: [
-            { field: "vendorId", issue: "Vendor ID is invalid or inactive" },
+            { field: "productId", issue: "A demo product identifier is required" },
             { field: "totalAmount", issue: "Total amount must be greater than 0" }
           ]
         },
@@ -946,61 +951,61 @@ export const mockApiEndpoints: ApiEndpointMock[] = [
     ]
   },
   {
-    id: "video-analyze",
-    name: "Video Analysis Telemetry Stream",
+    id: "demo-media-analysis",
+    name: "Media Analysis",
     method: "GET",
-    path: "/api/v1/video/analysis/vid_5521",
-    description: "Fetches motion tracking keypoints and score breakdown for processed video.",
+    path: "/api/demo/media/analysis/demo_001",
+    description: "Returns a deterministic analysis summary for a fictional demo asset.",
     requestHeaders: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsIn...",
+      "Authorization": "Bearer demo-token",
       "Accept": "application/json"
     },
     responses: [
       {
         status: 200,
         statusText: "OK",
-        description: "Video processing complete. Telemetry points returned.",
+        description: "Synthetic media analysis completed by the local simulation.",
         headers: {
           "Content-Type": "application/json",
-          "X-Processing-Engine": "MotionAI-v2.1",
-          "X-Response-Time": "48ms"
+          "X-Demo-Engine": "browser-mock",
+          "X-Demo-Latency": "110ms"
         },
         body: {
           status: "success",
+          simulation: true,
           data: {
-            videoId: "vid_5521",
-            state: "ANALYSIS_COMPLETE",
-            fps: 60,
-            durationSeconds: 14.5,
+            mediaId: "demo_media_001",
+            state: "DEMO_ANALYSIS_COMPLETE",
+            durationSeconds: 10,
             metrics: {
-              formAccuracyScore: 94.2,
-              repCount: 12,
-              tempoSeconds: 2.1
+              qualityScore: 90,
+              sampleCount: 10
             }
           }
         },
         assertions: [
           { check: "Status code is 200 OK", passed: true },
-          { check: "Analysis state equals ANALYSIS_COMPLETE", passed: true },
-          { check: "formAccuracyScore is within 0-100 range", passed: true }
+          { check: "Analysis state equals DEMO_ANALYSIS_COMPLETE", passed: true },
+          { check: "qualityScore is within the 0-100 demo range", passed: true }
         ]
       },
       {
         status: 500,
         statusText: "Internal Server Error",
-        description: "Simulated backend media transcoding worker failure.",
+        description: "Simulated local processing failure.",
         headers: {
           "Content-Type": "application/json",
-          "X-Response-Time": "110ms"
+          "X-Demo-Latency": "160ms"
         },
         body: {
           status: "error",
-          errorCode: "VIDEO_PROCESSING_FAILED",
-          message: "Unable to process video frame stream. Transcoding pipeline timeout."
+          simulation: true,
+          errorCode: "DEMO_MEDIA_PROCESSING_FAILED",
+          message: "The synthetic media sample could not be processed."
         },
         assertions: [
           { check: "Status code is 500 Internal Server Error", passed: true },
-          { check: "No stack traces or database credentials leaked", passed: true }
+          { check: "No implementation details are exposed", passed: true }
         ]
       }
     ]
@@ -1021,15 +1026,15 @@ from pages.marketplace_page import MarketplacePage
 
 def test_user_can_complete_rental_checkout(page: Page):
     """
-    Test Scenario: Authenticated user searches for item,
-    adds rental to cart, and verifies wallet deduction.
+    Demo Scenario: Synthetic user selects an item,
+    submits an order, and verifies the local account summary.
     """
     marketplace = MarketplacePage(page)
     checkout = CheckoutPage(page)
 
     # 1. Navigate to marketplace with authenticated session
     marketplace.navigate()
-    expect(page).to_have_title("Campus Closet | Marketplace")
+    expect(page).to_have_title("Demo Store | Sample Catalog")
 
     # 2. Search & Select Rental Item
     marketplace.search_item("Vintage Leather Jacket")
@@ -1041,8 +1046,8 @@ def test_user_can_complete_rental_checkout(page: Page):
     expect(checkout.order_total).to_have_text("$45.00")
     expect(checkout.deposit_amount).to_have_text("$15.00")
 
-    # 4. Confirm Wallet Payment & Verify Success Modal
-    checkout.select_payment_method("WALLET")
+    # 4. Confirm Demo Payment & Verify Success Modal
+    checkout.select_payment_method("DEMO_ACCOUNT")
     checkout.click_confirm_order()
 
     # 5. Assert confirmation & order reference
@@ -1054,7 +1059,7 @@ def test_user_can_complete_rental_checkout(page: Page):
       "Navigate to marketplace & search for target inventory",
       "Select rental duration & validate UI price calculations",
       "Navigate to checkout cart & verify line item breakdown",
-      "Submit order via digital wallet & assert confirmation badge"
+      "Submit order via the demo account & assert confirmation badge"
     ]
   },
   {
@@ -1069,7 +1074,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-class TestAlphaEcommerce(unittest.TestCase):
+class TestDemoStore(unittest.TestCase):
     def setUp(self):
         options = webdriver.ChromeOptions()
         options.add_argument("--headless=new")
@@ -1079,15 +1084,15 @@ class TestAlphaEcommerce(unittest.TestCase):
 
     def test_valid_user_authentication_and_dashboard_redirect(self):
         driver = self.driver
-        driver.get("https://ecommerce.alpha.internal/login")
+        driver.get("https://demo.example.invalid/sign-in")
 
         # Locate elements with explicit wait
         email_field = self.wait.until(EC.visibility_of_element_located((By.ID, "user-email")))
         password_field = driver.find_element(By.ID, "user-password")
         login_btn = driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
 
-        email_field.send_keys("tirtha.tester@alpha.com")
-        password_field.send_keys("ValidSecret123")
+        email_field.send_keys("demo.user@example.invalid")
+        password_field.send_keys("demo-password")
         login_btn.click()
 
         # Assert navigation and welcome banner
@@ -1116,7 +1121,7 @@ class TestAlphaEcommerce(unittest.TestCase):
 from pydantic import BaseModel, EmailStr
 from typing import Optional
 
-app = FastAPI(title="Alpha QA & Backend Service", version="1.0.0")
+app = FastAPI(title="Local Demo API", version="1.0.0")
 
 class UserRegisterRequest(BaseModel):
     email: EmailStr
@@ -1128,18 +1133,18 @@ class UserResponse(BaseModel):
     email: str
     status: str
 
-@app.post("/api/v1/users/register", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
+@app.post("/api/demo/users", response_model=UserResponse, status_code=status.HTTP_201_CREATED)
 async def register_user(payload: UserRegisterRequest):
     """
     Creates a new user record with validation and schema enforcement.
     """
-    if not payload.email.endswith("@alpha.com"):
+    if not payload.email.endswith("@example.invalid"):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Domain not authorized for enterprise registration."
         )
     return UserResponse(
-        user_id="usr_88291a",
+        user_id="demo_user_001",
         email=payload.email,
         status="ACTIVE"
     )
@@ -1160,48 +1165,48 @@ async def register_user(payload: UserRegisterRequest):
     code: `from locust import HttpUser, task, between
 import random
 
-class RecruiterUser(HttpUser):
+class DemoUser(HttpUser):
     wait_time = between(1, 3) # Realistic human think time
 
     def on_start(self):
         """Authenticate user and obtain session token before load tasks."""
-        response = self.client.post("/api/v1/auth/login", json={
-            "email": "load_recruiter@alpha.com",
-            "password": "Password123"
+        response = self.client.post("/api/demo/auth/login", json={
+            "email": "demo.load@example.invalid",
+            "password": "demo-password"
         })
         token = response.json().get("data", {}).get("token")
         self.headers = {"Authorization": f"Bearer {token}"}
 
     @task(3)
-    def search_candidates(self):
-        """Simulates search candidate queries with skill filters."""
+    def search_catalog(self):
+        """Simulates generic demo searches with sample filters."""
         skills = ["Python", "Selenium", "Playwright", "Postman", "SQL"]
         target_skill = random.choice(skills)
         self.client.get(
-            f"/api/v1/candidates/search?skill={target_skill}&limit=20",
+            f"/api/demo/catalog/search?tag={target_skill}&limit=20",
             headers=self.headers,
-            name="/api/v1/candidates/search"
+            name="/api/demo/catalog/search"
         )
 
     @task(1)
-    def submit_interview_scorecard(self):
-        """Simulates concurrent interview feedback submissions."""
+    def submit_demo_form(self):
+        """Simulates concurrent fictional form submissions."""
         self.client.post(
-            "/api/v1/interviews/scorecards",
+            "/api/demo/forms/submissions",
             json={
-                "candidateId": "cand_1002",
-                "technicalScore": random.randint(8, 10),
-                "comments": "Strong QA fundamentals, Selenium & backend expertise."
+                "recordId": "demo_record_001",
+                "sampleScore": random.randint(8, 10),
+                "comments": "Synthetic load-test submission."
             },
             headers=self.headers,
-            name="/api/v1/interviews/scorecards"
+            name="/api/demo/forms/submissions"
         )
 `,
     testSteps: [
       "Define realistic user think time between 1 and 3 seconds",
       "Authenticate once in on_start hook to obtain JWT Bearer header",
-      "Simulate high-frequency search traffic with weight @task(3)",
-      "Simulate concurrent transactional score submissions with @task(1)"
+      "Simulate high-frequency demo search traffic with weight @task(3)",
+      "Simulate concurrent synthetic form submissions with @task(1)"
     ]
   }
 ];

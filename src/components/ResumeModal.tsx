@@ -252,7 +252,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         {/* Modal Footer */}
         <div className="sticky bottom-0 z-20 p-4 sm:p-5 bg-slate-900/95 border-t border-slate-800 backdrop-blur-md flex items-center justify-between">
           <span className="text-xs text-slate-500">
-            Alpha IT Managed Services • Tirtha Sarathi Mohanty
+            Sanitized Portfolio Case Study • Tirtha Sarathi Mohanty
           </span>
           <button
             onClick={onClose}

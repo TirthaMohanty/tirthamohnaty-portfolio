@@ -14,7 +14,7 @@ export const ExperienceSection: React.FC = () => {
           badgeText="Career & Background"
           badgeVariant="emerald"
           title="Professional Journey & Education"
-          subtitle="Hands-on QA engineering at Alpha IT Managed Services, academic foundation in Computer Applications, and continuous certifications."
+          subtitle="Hands-on QA engineering across confidential client work, an academic foundation in Computer Applications, and continuous certifications."
         />
 
         {/* Vertical Experience Timeline */}

@@ -80,7 +80,7 @@ export const AboutSection: React.FC = () => {
               </h3>
               
               <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-300">
-                I am a <strong>Software QA Engineer</strong> with 1.7 years of hands-on experience across full-lifecycle quality assurance for high-volume consumer marketplaces, enterprise procurement platforms, HR recruitment automation tools, and fitness video processing applications.
+                I am a <strong>Software QA Engineer</strong> with 1.7 years of hands-on experience across full-lifecycle quality assurance for web, mobile, workflow, scheduling, and media applications. Public case studies are intentionally sanitized.
               </p>
 
               <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-300">
@@ -93,16 +93,16 @@ export const AboutSection: React.FC = () => {
                 </h4>
                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   <span className="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 text-slate-200">
-                    🛍️ P2P Commerce & Rental Marketplaces
+                    🛍️ Commerce & Checkout Applications
                   </span>
                   <span className="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 text-slate-200">
-                    🏢 Enterprise Procurement & Vendor Management
+                    🏢 Order & Approval Workflows
                   </span>
                   <span className="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 text-slate-200">
-                    👥 Talent Lifecycle & HRTech Platforms
+                    👥 Records & Scheduling Platforms
                   </span>
                   <span className="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 text-slate-200">
-                    📹 Real-time Camera & Video Analytics Apps
+                    📹 Mobile Media Processing Apps
                   </span>
                 </div>
               </div>

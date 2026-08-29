@@ -108,11 +108,11 @@ export const PerformanceSection: React.FC = () => {
               </span>
               <div className="space-y-1.5 font-mono text-[11px] sm:text-xs text-slate-300">
                 <div className="p-2 rounded bg-slate-900 border border-slate-800 flex justify-between gap-2">
-                  <span className="truncate">GET /api/v1/candidates/search</span>
+                  <span className="truncate">GET /api/demo/catalog/search</span>
                   <span className="text-cyan-400 font-bold shrink-0">wt: 3</span>
                 </div>
                 <div className="p-2 rounded bg-slate-900 border border-slate-800 flex justify-between gap-2">
-                  <span className="truncate">POST /api/v1/interviews/scorecards</span>
+                  <span className="truncate">POST /api/demo/forms/submissions</span>
                   <span className="text-amber-400 font-bold shrink-0">wt: 1</span>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export const PerformanceSection: React.FC = () => {
                   <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
                     Locust Live Telemetry Monitor
                   </h3>
-                  <span className="text-xs font-mono text-slate-400">Host: https://api.alpha.internal</span>
+                  <span className="text-xs font-mono text-slate-400">Target: Local synthetic workload</span>
                 </div>
               </div>
               <Badge variant={isStressed ? 'amber' : 'emerald'} size="md" dot>
@@ -204,7 +204,7 @@ export const PerformanceSection: React.FC = () => {
                 Performance Engineering Insights
               </h4>
               <p className="text-slate-300 leading-relaxed text-[11px] sm:text-xs">
-                During performance testing with Locust on search endpoints, discovered that unindexed database columns caused response latency to escalate from 250ms to 4.2s under 50+ concurrent requests. Adding composite indexes reduced P95 latency by 85%.
+                Synthetic performance model: increasing concurrent search traffic raises response latency until a simulated optimization lowers the P95 curve. All values are illustrative and are calculated locally in the browser.
               </p>
             </div>
 

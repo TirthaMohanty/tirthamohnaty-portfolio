@@ -101,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
                 </span>
               </div>
               <p className="text-xs text-slate-400">
-                Company: <span className="text-slate-200 font-medium">Alpha IT Managed Services</span>
+                Experience: <span className="text-slate-200 font-medium">Confidential client projects</span>
               </p>
               <p className="text-xs text-slate-400">
                 Location: <span className="text-slate-200 font-medium">{personalInfo.location}</span>

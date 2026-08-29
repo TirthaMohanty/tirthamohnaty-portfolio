@@ -25,13 +25,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
         "[PLAYWRIGHT] Initialized Chromium headless context [storage_state.json]",
         "[PASS] ✓ [web] › test_auth.py:12 › test_valid_user_login (85ms)",
         "[PASS] ✓ [web] › test_cart.py:34 › test_add_to_cart_state_persist (110ms)",
-        "[PASS] ✓ [web] › test_checkout.py:78 › test_stripe_wallet_deduction (240ms)",
+        "[PASS] ✓ [web] › test_checkout.py:78 › test_demo_account_update (240ms)",
         "[SUCCESS] 24/24 E2E scenarios passed with 0 flaky assertions."
       ],
       runSteps: [
         { p: 25, log: "[STEP 1/4] Spawning Chromium context & injecting session cookies..." },
         { p: 55, log: "[STEP 2/4] Executing Page Object Model (POM) locators for cart & checkout..." },
-        { p: 85, log: "[STEP 3/4] Asserting WebSocket order notification & balance update..." },
+        { p: 85, log: "[STEP 3/4] Asserting simulated order notification & account update..." },
         { p: 100, log: "[SUCCESS] 24 passed in 1.18s • 100% assertions verified cleanly." }
       ]
     },
@@ -44,13 +44,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
       logs: [
         "[APPIUM] Connected to Android 14 (Pixel 8) & iOS 17 (iPhone 15)",
         "[PASS] ✓ [android] › test_login_biometrics.py:19 › test_fingerprint_auth (190ms)",
-        "[PASS] ✓ [android] › test_camera_upload.py:42 › test_video_chunk_upload (420ms)",
-        "[PASS] ✓ [ios]     › test_chat_gestures.py:65 › test_swipe_dismiss_modal (180ms)",
+        "[PASS] ✓ [android] › test_media_upload.py:42 › test_demo_file_upload (420ms)",
+        "[PASS] ✓ [ios]     › test_navigation.py:65 › test_swipe_dismiss_modal (180ms)",
         "[SUCCESS] 16/16 Mobile app flows verified across Android & iOS."
       ],
       runSteps: [
         { p: 30, log: "[STEP 1/4] Bootstrapping UIAutomator2 & XCUITest driver sessions..." },
-        { p: 60, log: "[STEP 2/4] Simulating touch gestures, backgrounding & camera intents..." },
+        { p: 60, log: "[STEP 2/4] Simulating touch gestures, backgrounding & file selection..." },
         { p: 85, log: "[STEP 3/4] Validating offline local SQLite data sync upon reconnection..." },
         { p: 100, log: "[SUCCESS] 16 passed in 2.35s • Mobile regression verified." }
       ]
@@ -62,14 +62,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
       passed: 38,
       time: "0.6s",
       logs: [
-        "[PYTEST] Initializing FastAPI TestClient & Async MongoDB Fixtures",
-        "[PASS] ✓ [api] › POST /api/v1/auth/token › 200 OK JWT Bearer Issued (18ms)",
-        "[PASS] ✓ [api] › GET  /api/v1/contracts › 200 OK RBAC Enforced (32ms)",
-        "[PASS] ✓ [api] › POST /api/v1/orders    › 201 Created & DB Ledger Match (45ms)",
+        "[PYTEST] Initializing local TestClient & deterministic demo fixtures",
+        "[PASS] ✓ [api] › POST /api/demo/auth/login    › 200 OK Demo Token Issued (18ms)",
+        "[PASS] ✓ [api] › GET  /api/demo/catalog/items › 200 OK Access Rule Verified (32ms)",
+        "[PASS] ✓ [api] › POST /api/demo/orders        › 201 Created & Mock Schema Match (45ms)",
         "[SUCCESS] 38/38 REST endpoint contracts & status codes validated."
       ],
       runSteps: [
-        { p: 25, log: "[STEP 1/4] Generating mocked JWT tokens with granular RBAC scopes..." },
+        { p: 25, log: "[STEP 1/4] Generating placeholder tokens with fictional demo scopes..." },
         { p: 55, log: "[STEP 2/4] Fuzzing negative payload boundaries & invalid schema types..." },
         { p: 80, log: "[STEP 3/4] Checking SQL transaction rollbacks & MongoDB TTL collections..." },
         { p: 100, log: "[SUCCESS] 38 passed in 0.58s • 0 schema violations." }
@@ -83,7 +83,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
       time: "3.0s",
       logs: [
         "[LOCUST] Spawned 500 concurrent virtual users @ 25 users/sec",
-        "[PASS] ✓ [load] GET /api/v1/search › RPS: 480 req/s | Avg: 52ms",
+        "[PASS] ✓ [load] GET /api/demo/search › RPS: 480 req/s | Avg: 52ms",
         "[PASS] ✓ [load] P95 Benchmark: 98ms | P99: 145ms (Target < 300ms)",
         "[PASS] ✓ [load] Failure Rate: 0.00% across 14,200 HTTP transactions",
         "[SUCCESS] Load threshold sustained without connection pool saturation."

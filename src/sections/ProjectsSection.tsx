@@ -35,8 +35,8 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ onSelectProjec
         <SectionHeading
           badgeText="Featured Engineering Work"
           badgeVariant="cyan"
-          title="Featured QA Projects"
-          subtitle="Real-world production testing portfolios spanning commerce marketplaces, enterprise procurement systems, HR recruitment suites, and mobile video analysis apps."
+          title="Sanitized QA Case Studies"
+          subtitle="Fictionalized examples derived from broad testing disciplines. Names, workflows, identifiers, metrics, and API details are synthetic."
         />
 
         {/* Projects Grid */}
