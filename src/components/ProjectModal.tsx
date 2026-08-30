@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ShieldCheck, CheckCircle2, AlertTriangle, Bug, Code2, Gauge, Lock, Database } from 'lucide-react';
+import { X, ShieldCheck, CheckCircle2, AlertTriangle, Code2, Gauge, Lock, Database } from 'lucide-react';
 import type { ProjectCaseStudy } from '../types';
 import { Badge } from './Badge';
 import { ToolLogo } from './Icons';
@@ -39,7 +39,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.type}
               </Badge>
               <span className="text-xs font-mono text-emerald-400 font-semibold">
-                Case Study
+                Project Overview
               </span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -206,34 +206,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
             </div>
           </div>
 
-          {/* Section 9: Bugs Discovered & Quality Impact */}
-          <div className="space-y-3">
-            <h4 className="text-base font-bold text-white flex items-center gap-2">
-              <Bug className="w-5 h-5 text-rose-400" />
-              6. Critical Bugs Discovered
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {project.bugsDiscovered.map((bug, idx) => (
-                <div key={idx} className="p-4 rounded-xl border border-rose-900/40 bg-rose-950/10 space-y-2">
-                  <div className="flex items-center gap-2">
-                    <Badge variant="rose" size="sm">Defect #{idx + 1}</Badge>
-                    <span className="text-xs font-bold text-white truncate">{bug.title}</span>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed">{bug.description}</p>
-                  <div className="pt-2 border-t border-rose-900/30 text-xs text-rose-300">
-                    <span className="font-semibold text-rose-400">QA Impact: </span>
-                    {bug.impact}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Section 10: Quality Improvements Delivered */}
+          {/* Section: Quality Improvements Delivered */}
           <div className="space-y-3">
             <h4 className="text-base font-bold text-white flex items-center gap-2">
               <CheckCircle2 className="w-5 h-5 text-cyan-400" />
-              7. QA ROI & Long-term Improvements
+              6. QA ROI & Long-term Improvements
             </h4>
             <div className="p-4 rounded-xl border border-cyan-900/40 bg-cyan-950/10 space-y-2">
               {project.improvements.map((imp, idx) => (
@@ -250,13 +227,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Modal Footer */}
         <div className="sticky bottom-0 z-20 p-4 sm:p-6 bg-slate-900/95 border-t border-slate-800 backdrop-blur-md flex items-center justify-between">
           <span className="text-xs text-slate-500 font-mono">
-            Sanitized Portfolio Case Study • Tirtha Sarathi Mohanty
+            QA Engineering Portfolio • Tirtha Sarathi Mohanty
           </span>
           <button
             onClick={onClose}
-            className="px-5 py-2 text-xs font-semibold rounded-xl bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition-colors"
+            className="px-5 py-2 text-xs font-semibold rounded-xl bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition-colors cursor-pointer"
           >
-            Close Case Study
+            Close Details
           </button>
         </div>
 

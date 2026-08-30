@@ -3,44 +3,60 @@ import { writeFileSync } from 'node:fs';
 const lines = [
   'Tirtha Sarathi Mohanty',
   'Quality Assurance Engineer',
-  'Mohali, India | tirthasarathimohanty966@gmail.com',
-  '',
-  'PUBLIC PORTFOLIO NOTICE',
-  'All client names, project names, API examples, identifiers, metrics, and datasets are sanitized or synthetic.',
+  'Mohali, India | +91 9668738425 | tirthasarathimohanty966@gmail.com',
+  'https://github.com/TirthaMohanty | linkedin.com/in/tirtha-sarathi-mohanty | https://tirthamohanty-portfolio.vercel.app/',
   '',
   'SUMMARY',
-  'Quality Assurance Engineer with hands-on experience in manual and automated testing for web and mobile',
-  'applications. Skilled in Selenium, Playwright, Appium, API contract testing, database verification,',
-  'performance testing, and Python backend development.',
+  'Quality Assurance Engineer with hands-on experience of 1.7 years in manual and automation testing for web and mobile',
+  'applications (Android & iOS). Skilled in Selenium, Playwright, Appium, API testing, Database testing, and performance',
+  'testing with strong knowledge of SDLC, STLC, and Agile methodologies. Adept at identifying defects, improving test',
+  'efficiency, and ensuring high-quality software delivery.',
   '',
   'TECHNICAL SKILLS',
-  'Automation: Selenium WebDriver, Playwright, Appium, Pytest, Page Object Model',
-  'API and security: Postman, OpenAPI, OWASP ZAP, contract and access-control validation',
-  'Performance and data: Locust, SQL, MongoDB, DBeaver, deterministic test fixtures',
-  'Development: Python, JavaScript, TypeScript, FastAPI, Django, Git',
+  'Languages: Python, JavaScript, HTML5, CSS3',
+  'Testing & Automation: Selenium, Playwright, Appium, Pytest, Manual Testing, Automation Testing, Functional Testing,',
+  '                     Non-functional Testing, UI Testing, API Testing, Performance Testing',
+  'Frameworks & Tools: Selenium WebDriver, FastAPI, Django, Postman, OWASP ZAP, Locust, Hoppscotch, Swagger',
+  'Technologies & Tools: Git, Bitbucket, Jira, SQL, MS Excel',
+  'Database Testing: MongoDB, DBeaver',
+  'Other Skills: Test Case Design, Bug Tracking, Agile Methodology, Debugging, Clean Code Practices',
   '',
   'EXPERIENCE',
-  'Quality Assurance Engineer | Confidential Software Services Company | June 2025 - Present',
-  '- Execute end-to-end web and mobile testing across functional, regression, API, and security scopes.',
-  '- Build maintainable browser and mobile automation suites using synthetic test data.',
-  '- Validate fictionalized API contracts, status handling, schemas, and authorization boundaries.',
-  '- Run local performance simulations and analyze illustrative latency and throughput trends.',
+  'Quality Assurance Engineer | Alpha IT Managed Services | Mohali, India | June 2025 - Present',
+  '- Performed end-to-end testing for E-commerce, Health and Fitness, Recruitment Management SaaS Platform and',
+  '  Contract Management System web and mobile applications (Android & iOS).',
+  '- Executed manual and automated test cases using Selenium, Playwright and Appium, improving test coverage and efficiency.',
+  '- Conducted API testing using Postman and validated backend services.',
+  '- Performed performance and security testing using tools like Locust and OWASP ZAP.',
+  '- Collaborated with cross-functional teams to ensure high-quality releases and production stability.',
+  '- Contributed to projects including Campus Closet, Health and Fitness, Talyn 360 and CMS ensuring defect-free deployments.',
   '',
-  'Quality Analyst Intern | Confidential Software Services Company | Feb 2025 - May 2025',
-  '- Designed test cases, automated repeatable checks, and documented reproducible defects.',
-  '- Built learning-focused demo APIs and verified database state using non-production fixtures.',
+  'Quality Analyst (Internship) | Alpha IT Managed Services | Mohali, India | Feb 2025 - May 2025',
+  '- Designed and executed test cases for web applications across different testing phases.',
+  '- Developed automation scripts using Selenium with Python, improving regression testing efficiency.',
+  '- Assisted in bug tracking and reporting using Jira.',
+  '- Built RESTful APIs using Python frameworks like FastAPI and Django.',
+  '- Gained hands-on experience in both QA and backend development workflows.',
   '',
-  'SANITIZED CASE STUDIES',
-  '- Demo Commerce Platform: catalog, checkout, account summary, notification, and mobile QA.',
-  '- Demo Workflow Platform: order requests, approvals, document checks, and role validation.',
-  '- Demo Scheduling Platform: record lifecycle, appointments, forms, and load simulation.',
-  '- Demo Media Platform: mobile capture, resilient uploads, asynchronous analysis, and reports.',
+  'PROJECTS & WORK HIGHLIGHTS',
+  '- Developed automated test scripts using Selenium, Playwright and Pytest, reducing manual effort and improving reliability.',
+  '- Tested AI applications for response accuracy, relevance, and hallucinations.',
+  '- Built REST APIs using FastAPI and Django enhancing backend development skills.',
+  '- Implemented hybrid testing frameworks for scalable automation testing.',
+  '- Conducted performance and security testing using Locust and OWASP ZAP.',
+  '- Improved defect detection and reporting processes, enhancing overall product quality.',
   '',
   'EDUCATION',
-  'Master of Computer Applications (2023)',
-  'Bachelor of Computer Applications (2021)',
+  'Master of Computer Applications (MCA) - Chandigarh Group of Colleges, Jhanjeri | 2023',
+  'Bachelor of Computer Applications (BCA) - Rourkela Institute of Management Services | 2021',
   '',
-  'This resume intentionally excludes confidential client details and production-derived data.'
+  'CERTIFICATIONS',
+  '- ISTQB Certification (In Progress)',
+  '',
+  'ADDITIONAL INFORMATION',
+  '- Strong interest in Python programming and backend development.',
+  '- Experience in both QA and development roles, bridging the gap between testing and engineering.',
+  '- Passionate about writing clean, maintainable, and scalable code.'
 ];
 
 const escapePdfText = (value) =>
@@ -48,9 +64,9 @@ const escapePdfText = (value) =>
 
 const pageWidth = 612;
 const pageHeight = 792;
-const margin = 54;
-const lineHeight = 16;
-const maxLinesPerPage = 43;
+const margin = 48;
+const lineHeight = 14.5;
+const maxLinesPerPage = 48;
 const pages = [];
 
 for (let index = 0; index < lines.length; index += maxLinesPerPage) {
@@ -69,7 +85,7 @@ const fontId = addObject('<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 const pageIds = [];
 
 for (const pageLines of pages) {
-  const contentLines = ['BT', '/F1 10 Tf', `${margin} ${pageHeight - margin} Td`];
+  const contentLines = ['BT', '/F1 9.5 Tf', `${margin} ${pageHeight - margin} Td`];
   pageLines.forEach((line, index) => {
     if (index > 0) contentLines.push(`0 -${lineHeight} Td`);
     contentLines.push(`(${escapePdfText(line)}) Tj`);
@@ -108,3 +124,4 @@ pdf +=
 
 writeFileSync('public/Tirtha_Mohanty_Resume.pdf', pdf, 'binary');
 writeFileSync('public/resume.pdf', pdf, 'binary');
+console.log('Original Resume PDF regenerated successfully!');

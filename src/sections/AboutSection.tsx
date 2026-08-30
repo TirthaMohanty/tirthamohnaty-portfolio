@@ -1,10 +1,15 @@
 import React from 'react';
-import { ShieldCheck, Layers, Cpu, Wrench, CheckCircle2, Target, HeartHandshake, Zap } from 'lucide-react';
-import { personalInfo, metricCards } from '../data/portfolioData';
+import { ShieldCheck, Layers, Cpu, Wrench, Target, HeartHandshake, Zap, FileDown, Calendar, GraduationCap } from 'lucide-react';
+import { metricCards, experienceTimeline, educationList } from '../data/portfolioData';
 import { SectionHeading } from '../components/SectionHeading';
 import { Badge } from '../components/Badge';
 
-export const AboutSection: React.FC = () => {
+interface AboutSectionProps {
+  onOpenResume?: () => void;
+  onNavigate?: (tab: 'home' | 'about' | 'skills' | 'projects' | 'labs' | 'contact' | 'all') => void;
+}
+
+export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenResume }) => {
   const iconMap: Record<string, React.ReactNode> = {
     ShieldCheck: <ShieldCheck className="w-6 h-6 text-cyan-400" />,
     Layers: <Layers className="w-6 h-6 text-indigo-400" />,
@@ -25,24 +30,77 @@ export const AboutSection: React.FC = () => {
     },
     {
       title: "Developer & Product Collaboration",
-      description: "Partnering closely with developers, product managers, and UI/UX designers with actionable defect logs, logs, and clear reproduction steps.",
+      description: "Partnering closely with developers, product managers, and UI/UX designers with actionable defect logs, HAR traces, and clear reproduction steps.",
       icon: <HeartHandshake className="w-5 h-5 text-emerald-400" />
     }
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-24 bg-slate-950/60 relative">
+    <section id="about" className="pt-2 sm:pt-4 pb-14 sm:pb-18 bg-slate-950/60 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeading
-          badgeText="About My Career"
+          badgeText="About Me"
           badgeVariant="cyan"
-          title="Engineering Quality with Precision & Purpose"
-          subtitle="A disciplined approach to software reliability, test automation frameworks, and product validation."
+          title="About Me"
+          subtitle="Quality Assurance Engineer dedicated to bulletproof automated test suites, API reliability, and exceptional digital experiences."
         />
 
+        {/* 2-Column Layout with Signature Offset Geometric Frame Matching Reference */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center mb-16 sm:mb-20">
+          
+          {/* Left: Clean Large Photo with Offset Geometric Frame */}
+          <div className="lg:col-span-6 relative flex justify-center lg:justify-start">
+            <div className="relative w-full max-w-sm sm:max-w-md">
+              
+              {/* Offset Geometric Border Accent */}
+              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-indigo-500/90 rounded-2xl -z-10 hidden sm:block shadow-lg shadow-indigo-500/15" />
+              
+              {/* Photo Display Card */}
+              <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900 shadow-2xl">
+                <img
+                  src="/profile.jpg"
+                  alt="Tirtha Sarathi Mohanty - Software QA Engineer"
+                  className="w-full h-auto object-contain rounded-2xl contrast-[1.03] brightness-[1.02] saturate-[1.03] block"
+                />
+              </div>
+
+            </div>
+          </div>
+
+          {/* Right: Bio & Narrative */}
+          <div className="lg:col-span-6 space-y-6 text-slate-300">
+            <div className="space-y-4">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                Software QA Engineer & Problem Solver
+              </h3>
+              
+              <p className="text-sm sm:text-base leading-relaxed text-slate-300">
+                I'm a passionate <strong>Quality Assurance Engineer</strong> with 1.7 years of hands-on experience in manual and automation testing for web and mobile applications (Android & iOS). I specialize in Selenium, Playwright, Appium, REST API testing, and performance engineering with a strong foundation in backend development.
+              </p>
+
+              <p className="text-sm sm:text-base leading-relaxed text-slate-400">
+                My approach combines rigorous test design with creative problem-solving to build intuitive, resilient, and scalable solutions. Experienced in both QA and backend Python frameworks (FastAPI & Django), I bridge the gap between engineering and quality to ensure defect-free production deployments.
+              </p>
+            </div>
+
+            {/* Download Resume Button (Matching Reference Style) */}
+            <div className="pt-4 flex items-center">
+              <button
+                onClick={onOpenResume}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 transition-all shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              >
+                <FileDown className="w-4 h-4" />
+                <span>Download Resume</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
         {/* 4 Metric Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-16 sm:mb-20">
           {metricCards.map((card) => (
             <div
               key={card.id}
@@ -69,114 +127,99 @@ export const AboutSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Detailed Narrative & Philosophy Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Career Story */}
-          <div className="lg:col-span-7 space-y-6 text-slate-300">
-            <div className="p-5 sm:p-8 rounded-2xl border border-slate-800 bg-slate-900/40 glass-panel space-y-4 sm:space-y-5">
-              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-                Who I Am & How I Approach Testing
-              </h3>
-              
-              <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-300">
-                I am a <strong>Software QA Engineer</strong> with 1.7 years of hands-on experience across full-lifecycle quality assurance for web, mobile, workflow, scheduling, and media applications. Public case studies are intentionally sanitized.
-              </p>
+        {/* Experience Timeline Grid - Reference Style */}
+        <div className="mt-8 mb-16">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight mb-2">Experience Timeline</h3>
+            <div className="h-1 w-16 bg-cyan-500 rounded-full mx-auto" />
+          </div>
 
-              <p className="text-xs sm:text-sm md:text-base leading-relaxed text-slate-300">
-                My work spans the entire testing spectrum: from crafting exploratory test charters and auditing Figma pixel specs to developing automated regression suites with <strong>Selenium, Playwright + Python</strong>, validating microservice REST APIs in <strong>Postman</strong>, simulating multi-user load in <strong>Locust</strong>, and probing application security with <strong>OWASP ZAP</strong>.
-              </p>
-
-              <div className="pt-2">
-                <h4 className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold mb-3">
-                  Types of Applications Tested
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 flex flex-col justify-between hover:border-slate-700 transition-all hover:shadow-xl group">
+              <div className="space-y-3">
+                <p className="text-xs font-semibold text-cyan-400 font-mono flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {experienceTimeline[0]?.period || "June 2025 – Present"}
+                </p>
+                <h4 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  {experienceTimeline[0]?.role || "Quality Assurance Engineer"}
                 </h4>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                  <span className="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 text-slate-200">
-                    🛍️ Commerce & Checkout Applications
-                  </span>
-                  <span className="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 text-slate-200">
-                    🏢 Order & Approval Workflows
-                  </span>
-                  <span className="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 text-slate-200">
-                    👥 Records & Scheduling Platforms
-                  </span>
-                  <span className="px-2.5 py-1 text-xs rounded-lg bg-slate-800 border border-slate-700 text-slate-200">
-                    📹 Mobile Media Processing Apps
-                  </span>
-                </div>
+                <p className="text-xs font-semibold text-slate-400">
+                  {experienceTimeline[0]?.company || "Confidential Software Services Company"}
+                </p>
+                <p className="text-xs text-slate-400 leading-relaxed pt-2">
+                  {experienceTimeline[0]?.summary || "Leading end-to-end QA across web & mobile apps with automated Selenium/Playwright suites and API verification."}
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <span>Mohali, India</span>
+                <span className="text-cyan-400">Core QA</span>
               </div>
             </div>
 
-            {/* Core Pillars */}
-            <div className="space-y-3">
-              <h4 className="text-xs sm:text-sm font-mono uppercase tracking-wider text-slate-400 font-semibold">
-                Guiding Principles
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {corePillars.map((p, idx) => (
-                  <div key={idx} className="p-3.5 sm:p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-1.5 sm:space-y-2">
-                    <div className="p-2 rounded-lg bg-slate-800 w-fit">{p.icon}</div>
-                    <h5 className="text-xs font-bold text-white">{p.title}</h5>
-                    <p className="text-[11px] text-slate-400 leading-relaxed">{p.description}</p>
-                  </div>
-                ))}
+            {/* Card 2 */}
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 flex flex-col justify-between hover:border-slate-700 transition-all hover:shadow-xl group">
+              <div className="space-y-3">
+                <p className="text-xs font-semibold text-cyan-400 font-mono flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5" />
+                  {experienceTimeline[1]?.period || "Feb 2025 – May 2025"}
+                </p>
+                <h4 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  {experienceTimeline[1]?.role || "Quality Analyst (Intern)"}
+                </h4>
+                <p className="text-xs font-semibold text-slate-400">
+                  {experienceTimeline[1]?.company || "Confidential Software Services Company"}
+                </p>
+                <p className="text-xs text-slate-400 leading-relaxed pt-2">
+                  {experienceTimeline[1]?.summary || "Designed comprehensive test cases, automated regression checks in Selenium, and built demo REST APIs with FastAPI & Django."}
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <span>Mohali, India</span>
+                <span className="text-indigo-400">QA & Backend</span>
+              </div>
+            </div>
+
+            {/* Card 3 - Academic */}
+            <div className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6 flex flex-col justify-between hover:border-slate-700 transition-all hover:shadow-xl group">
+              <div className="space-y-3">
+                <p className="text-xs font-semibold text-cyan-400 font-mono flex items-center gap-1.5">
+                  <GraduationCap className="w-3.5 h-3.5" />
+                  2021 – 2023
+                </p>
+                <h4 className="text-lg font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  {educationList[0]?.degree || "Master of Computer Applications (MCA)"}
+                </h4>
+                <p className="text-xs font-semibold text-slate-400">
+                  {educationList[0]?.institution || "Chandigarh Group of Colleges, Jhanjeri"}
+                </p>
+                <p className="text-xs text-slate-400 leading-relaxed pt-2">
+                  Comprehensive foundation in software engineering, database management systems, data structures, and application development principles.
+                </p>
+              </div>
+              <div className="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-500">
+                <span>MCA Degree</span>
+                <span className="text-purple-400">Academic Foundation</span>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right Philosophy Card & QA Value Prop */}
-          <div className="lg:col-span-5 space-y-6 w-full">
-            
-            {/* Testing Philosophy Highlight Box */}
-            <div className="p-6 sm:p-8 rounded-2xl border border-cyan-500/30 bg-gradient-to-br from-slate-900 via-cyan-950/20 to-indigo-950/20 backdrop-blur-xl relative overflow-hidden shadow-xl">
-              <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none" />
-              
-              <div className="flex items-center gap-2 mb-3 sm:mb-4">
-                <span className="text-xl sm:text-2xl">💡</span>
-                <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold">
-                  Testing Philosophy
-                </span>
+        {/* Guiding Principles */}
+        <div className="space-y-4 pt-4 border-t border-slate-800/80">
+          <h4 className="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold text-center">
+            Core Engineering Principles
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {corePillars.map((p, idx) => (
+              <div key={idx} className="p-4 sm:p-5 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2">
+                <div className="p-2 rounded-lg bg-slate-800 w-fit">{p.icon}</div>
+                <h5 className="text-sm font-bold text-white">{p.title}</h5>
+                <p className="text-xs text-slate-400 leading-relaxed">{p.description}</p>
               </div>
-
-              <blockquote className="text-sm sm:text-base md:text-lg font-medium text-white leading-relaxed mb-6 italic">
-                "{personalInfo.testingPhilosophy}"
-              </blockquote>
-
-              <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
-                <span className="font-mono text-slate-400">Quality Advocate</span>
-                <span className="text-cyan-400 font-semibold">Tirtha Sarathi Mohanty</span>
-              </div>
-            </div>
-
-            {/* QA Impact Checklist */}
-            <div className="p-5 sm:p-6 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-3">
-              <h4 className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                What I Bring to Your Team
-              </h4>
-              <ul className="space-y-2 text-xs text-slate-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 font-bold">✓</span>
-                  <span>Zero-flakiness mindset in automation script development.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 font-bold">✓</span>
-                  <span>Deep analytical bug reports with network HAR logs and root-cause hints.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 font-bold">✓</span>
-                  <span>Continuous proactive regression safety net for fast deploy cycles.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-cyan-400 font-bold">✓</span>
-                  <span>Strong cross-functional communication and empathy for end-users.</span>
-                </li>
-              </ul>
-            </div>
-
+            ))}
           </div>
-
         </div>
 
       </div>

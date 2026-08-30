@@ -1,26 +1,25 @@
 import React from 'react';
-import { ShieldCheck, Mail, FileDown, ArrowUp, Heart } from 'lucide-react';
+import { ShieldCheck, Mail, FileDown, ArrowUp, Heart, Phone } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import { LinkedinIcon } from './Icons';
 
 interface FooterProps {
   onOpenResume: () => void;
+  onNavigate?: (tab: 'home' | 'about' | 'skills' | 'projects' | 'labs' | 'contact' | 'all') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenResume, onNavigate }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Automation', href: '#automation' },
-    { name: 'API Lab', href: '#api-lab' },
-    { name: 'Performance', href: '#performance' },
-    { name: 'Contact', href: '#contact' },
+  const navTabs: { name: string; tab: 'home' | 'about' | 'skills' | 'projects' | 'labs' | 'contact' }[] = [
+    { name: 'Home', tab: 'home' },
+    { name: 'About & Career', tab: 'about' },
+    { name: 'Skills & Stack', tab: 'skills' },
+    { name: 'Featured Projects', tab: 'projects' },
+    { name: 'QA Automation Labs', tab: 'labs' },
+    { name: 'Contact & Hire', tab: 'contact' },
   ];
 
   return (
@@ -45,7 +44,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
             <p className="text-slate-400 text-sm max-w-md leading-relaxed">
               Dedicated to breaking bugs before they hit production. Specializing in automated test frameworks (Selenium, Playwright, Appium), REST API testing, Python backend engineering, and software reliability.
             </p>
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <a
+                href={`tel:${personalInfo.phone || '+919668738425'}`}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-800 bg-slate-900 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/40 text-xs font-medium transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" /> {personalInfo.phone || '+91 9668738425'}
+              </a>
               <a
                 href={personalInfo.linkedinUrl}
                 target="_blank"
@@ -75,14 +80,21 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
               Quick Navigation
             </h4>
             <ul className="space-y-2">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-slate-400 hover:text-cyan-400 text-xs transition-colors"
+              {navTabs.map((item) => (
+                <li key={item.name}>
+                  <button
+                    onClick={() => {
+                      if (onNavigate) {
+                        onNavigate(item.tab);
+                      } else {
+                        window.location.assign(`#${item.tab}`);
+                      }
+                      scrollToTop();
+                    }}
+                    className="text-slate-400 hover:text-cyan-400 text-xs transition-colors cursor-pointer text-left"
                   >
-                    {link.name}
-                  </a>
+                    {item.name}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -105,6 +117,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResume }) => {
               </p>
               <p className="text-xs text-slate-400">
                 Location: <span className="text-slate-200 font-medium">{personalInfo.location}</span>
+              </p>
+              <p className="text-xs text-slate-400">
+                Work Preference: <span className="text-cyan-300 font-medium">All India (On-Site / Remote)</span>
               </p>
             </div>
           </div>

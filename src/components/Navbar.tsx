@@ -1,118 +1,100 @@
-import React, { useState, useEffect } from 'react';
-import { ShieldCheck, Menu, X, FileDown, Sun, Moon, ChevronRight, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { Menu, X, FileDown, Sun, Moon, ChevronRight, Home, User, Award, FolderKanban, FlaskConical, Mail, Layers } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
-import { LinkedinIcon } from './Icons';
+import { LinkedinIcon, GithubIcon } from './Icons';
+
+export type NavTabId = 'home' | 'about' | 'skills' | 'projects' | 'labs' | 'contact' | 'all';
 
 interface NavbarProps {
   darkMode: boolean;
   setDarkMode: (val: boolean | ((prev: boolean) => boolean)) => void;
   onOpenResume: () => void;
+  activeTab: NavTabId;
+  onSelectTab: (tab: NavTabId) => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenResume }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+export const Navbar: React.FC<NavbarProps> = ({
+  darkMode,
+  setDarkMode,
+  onOpenResume,
+  activeTab,
+  onSelectTab,
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
 
-  // Streamlined, classy primary navigation links
-  const primaryNavLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Automation', href: '#automation' },
-    { name: 'API Lab', href: '#api-lab' },
-    { name: 'Performance', href: '#performance' },
-    { name: 'Contact', href: '#contact' },
+  const primaryNavTabs: { id: NavTabId; name: string; icon: React.ReactNode }[] = [
+    { id: 'home', name: 'Home', icon: <Home className="w-3.5 h-3.5" /> },
+    { id: 'about', name: 'About', icon: <User className="w-3.5 h-3.5" /> },
+    { id: 'skills', name: 'Skills', icon: <Award className="w-3.5 h-3.5" /> },
+    { id: 'projects', name: 'Projects', icon: <FolderKanban className="w-3.5 h-3.5" /> },
+    { id: 'labs', name: 'QA Labs', icon: <FlaskConical className="w-3.5 h-3.5" /> },
+    { id: 'contact', name: 'Contact', icon: <Mail className="w-3.5 h-3.5" /> },
   ];
 
-  // Full comprehensive directory for mobile drawer
-  const allNavLinks = [
-    { name: 'About My Career', href: '#about' },
-    { name: 'Experience & Education', href: '#experience' },
-    { name: 'Technical Skills Matrix', href: '#skills' },
-    { name: 'QA & Dev Toolbox', href: '#toolbox' },
-    { name: 'Featured QA Projects', href: '#projects' },
-    { name: 'Automation Engineering', href: '#automation' },
-    { name: 'API Testing Lab', href: '#api-lab' },
-    { name: 'Performance & Locust', href: '#performance' },
-    { name: 'Security Verification', href: '#security' },
-    { name: 'Bugs I\'ve Caught', href: '#bug-hunting' },
-    { name: 'QA Lifecycle Process', href: '#process' },
-    { name: 'Stack Matrix Search', href: '#matrix' },
-    { name: 'Career Goals', href: '#goals' },
-    { name: 'Contact & Hire', href: '#contact' },
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-
-      const sections = primaryNavLinks.map(link => link.href.substring(1));
-      const scrollPosition = window.scrollY + 260;
-
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const sectionEl = document.getElementById(sections[i]);
-        if (sectionEl && sectionEl.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i]);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const handleTabClick = (tabId: NavTabId) => {
+    onSelectTab(tabId);
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <header className="fixed top-2 sm:top-4 inset-x-0 z-50 flex justify-center px-3 sm:px-6 pointer-events-none">
-      <div
-        className={`w-full max-w-6xl pointer-events-auto rounded-2xl sm:rounded-full transition-all duration-300 ${
-          isScrolled
-            ? 'bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-2xl border border-slate-700/80 dark:border-white/10 shadow-2xl shadow-black/50 py-2 sm:py-2.5 px-3 sm:px-5'
-            : 'bg-slate-900/75 dark:bg-slate-950/75 backdrop-blur-xl border border-slate-700/60 dark:border-white/10 shadow-xl shadow-black/30 py-2.5 sm:py-3 px-3.5 sm:px-6'
-        }`}
-      >
+      <div className="w-full max-w-6xl pointer-events-auto rounded-2xl sm:rounded-full bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-2xl border border-slate-700/80 dark:border-white/10 shadow-2xl shadow-black/50 py-2 sm:py-2.5 px-3.5 sm:px-5 transition-all">
         <div className="flex items-center justify-between gap-2">
           
-          {/* Brand Logo & Title with Modern Glowing Capsule */}
-          <a
-            href="#hero"
-            className="flex items-center gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-full p-1"
+          {/* Brand Logo with Clean Typographic Mark */}
+          <button
+            onClick={() => handleTabClick('home')}
+            className="flex items-center gap-2.5 shrink-0 group focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-full p-1 text-left"
           >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-md shadow-cyan-500/25 group-hover:scale-105 transition-all duration-300 shrink-0">
-              <ShieldCheck className="w-4 h-4 sm:w-5 sm:h-5" />
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full p-0.5 bg-gradient-to-tr from-cyan-400 to-indigo-500 shadow-md shadow-cyan-500/25 group-hover:scale-105 transition-all shrink-0 overflow-hidden">
+              <img
+                src="/profile.jpg"
+                alt="Tirtha Mohanty"
+                className="w-full h-full rounded-full object-cover object-top"
+              />
             </div>
             
-            <div className="flex flex-col whitespace-nowrap">
-              <span className="text-xs sm:text-sm font-bold text-white tracking-tight flex items-center gap-1.5 leading-none">
-                Tirtha Mohanty
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" title="Open to QA Opportunities" />
-              </span>
-              <span className="text-[10px] font-mono text-cyan-400 mt-1 leading-none flex items-center gap-1">
-                <Sparkles className="w-2.5 h-2.5" /> QA Engineer
-              </span>
+            <div className="flex items-center text-sm sm:text-base font-bold tracking-tight">
+              <span className="text-cyan-400 border-b-2 border-cyan-400 pb-0.5">TIRTHA</span>
+              <span className="text-slate-500 mx-1">/</span>
+              <span className="text-slate-100">MOHANTY</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse ml-1.5 shrink-0" title="Available for Opportunities" />
             </div>
-          </a>
+          </button>
 
-          {/* Desktop Nav Links Pill Strip */}
-          <nav className="hidden lg:flex items-center gap-1 bg-slate-950/60 p-1 rounded-full border border-slate-800/80">
-            {primaryNavLinks.map((link) => {
-              const isActive = activeSection === link.href.substring(1);
+          {/* Desktop Nav Tabs Strip */}
+          <nav className="hidden md:flex items-center gap-1 bg-slate-950/80 p-1 rounded-full border border-slate-800">
+            {primaryNavTabs.map((tab) => {
+              const isActive = activeTab === tab.id;
               return (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className={`px-3 py-1 text-xs font-medium rounded-full whitespace-nowrap transition-all duration-200 ${
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabClick(tab.id)}
+                  className={`flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold rounded-full whitespace-nowrap transition-all duration-200 ${
                     isActive
-                      ? 'text-white bg-gradient-to-r from-cyan-600 to-indigo-600 shadow-sm shadow-cyan-500/20 font-semibold'
-                      : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                      ? 'text-slate-950 bg-cyan-400 shadow-sm shadow-cyan-500/30'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/70'
                   }`}
                 >
-                  {link.name}
-                </a>
+                  {tab.name}
+                </button>
               );
             })}
+
+            {/* View Mode Toggle: All In One View */}
+            <button
+              onClick={() => handleTabClick(activeTab === 'all' ? 'home' : 'all')}
+              className={`flex items-center gap-1 px-3 py-1.5 text-[11px] font-mono rounded-full transition-all ${
+                activeTab === 'all'
+                  ? 'bg-indigo-600 text-white font-bold'
+                  : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+              }`}
+              title="Toggle Full Scrollable View"
+            >
+              <Layers className="w-3 h-3" />
+              <span>{activeTab === 'all' ? 'Paginated View' : 'All Sections'}</span>
+            </button>
           </nav>
 
           {/* Action CTAs & Controls */}
@@ -139,10 +121,22 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
               <LinkedinIcon className="w-3.5 h-3.5 text-blue-400" />
             </a>
 
+            {/* GitHub Quick Link */}
+            <a
+              href={personalInfo.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:flex p-2 rounded-full border border-slate-700/80 bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white hover:border-slate-600 transition-all shadow-sm"
+              title="GitHub Profile"
+              aria-label="GitHub"
+            >
+              <GithubIcon className="w-3.5 h-3.5" />
+            </a>
+
             {/* Resume Pill CTA */}
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 rounded-full shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.03] active:scale-[0.97] transition-all whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 text-xs font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-full shadow-lg shadow-cyan-500/25 hover:scale-[1.03] active:scale-[0.97] transition-all whitespace-nowrap"
             >
               <FileDown className="w-3.5 h-3.5" />
               <span>Resume</span>
@@ -151,7 +145,7 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
             {/* Mobile / Tablet Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-full border border-slate-700/80 bg-slate-800/80 text-slate-300 hover:text-white transition-colors"
+              className="md:hidden p-2 rounded-full border border-slate-700/80 bg-slate-800/80 text-slate-300 hover:text-white transition-colors"
               aria-label="Open navigation menu"
             >
               {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -162,45 +156,42 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
 
         {/* Mobile / Tablet Floating Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-3 pt-3 pb-4 border-t border-slate-800 space-y-3 max-h-[75vh] overflow-y-auto animate-fadeIn">
-            
-            <div className="grid grid-cols-2 gap-2 pb-2">
-              <button
-                onClick={() => {
-                  onOpenResume();
-                  setMobileMenuOpen(false);
-                }}
-                className="flex items-center justify-center gap-2 py-2 px-3 bg-gradient-to-r from-cyan-600 to-indigo-600 text-white text-xs font-semibold rounded-xl shadow-md"
-              >
-                <FileDown className="w-3.5 h-3.5" /> View Resume
-              </button>
-              <a
-                href={personalInfo.linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-2 px-3 bg-slate-800 border border-slate-700 text-slate-200 text-xs font-semibold rounded-xl hover:bg-slate-700 transition-all"
-              >
-                <LinkedinIcon className="w-3.5 h-3.5 text-blue-400" /> LinkedIn
-              </a>
-            </div>
-
-            <div className="space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 block px-3 py-1">
-                Directory
-              </span>
-              {allNavLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3.5 py-2 text-xs font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-800/80 rounded-xl transition-all"
+          <div className="md:hidden mt-3 pt-3 border-t border-slate-800/80 space-y-1.5 animate-fadeIn pb-2">
+            {primaryNavTabs.map((tab) => {
+              const isActive = activeTab === tab.id;
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => handleTabClick(tab.id)}
+                  className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all ${
+                    isActive
+                      ? 'bg-cyan-400 text-slate-950 font-bold'
+                      : 'text-slate-300 hover:bg-slate-800/80'
+                  }`}
                 >
-                  <span>{link.name}</span>
-                  <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-                </a>
-              ))}
-            </div>
+                  <div className="flex items-center gap-2.5">
+                    {tab.icon}
+                    <span>{tab.name}</span>
+                  </div>
+                  <ChevronRight className="w-3.5 h-3.5 opacity-50" />
+                </button>
+              );
+            })}
 
+            <button
+              onClick={() => handleTabClick(activeTab === 'all' ? 'home' : 'all')}
+              className={`w-full flex items-center justify-between px-3.5 py-2 rounded-xl text-xs font-mono transition-all ${
+                activeTab === 'all'
+                  ? 'bg-indigo-600 text-white font-bold'
+                  : 'text-slate-400 bg-slate-950/60 border border-slate-800'
+              }`}
+            >
+              <span className="flex items-center gap-2">
+                <Layers className="w-3.5 h-3.5" />
+                {activeTab === 'all' ? 'Switch to Paginated View' : 'View All in Single Page'}
+              </span>
+              <ChevronRight className="w-3.5 h-3.5 opacity-50" />
+            </button>
           </div>
         )}
 

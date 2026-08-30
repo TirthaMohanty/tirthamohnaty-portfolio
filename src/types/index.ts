@@ -6,10 +6,15 @@ export interface PersonalInfo {
   experienceYears: string;
   location: string;
   linkedinUrl: string;
+  githubUrl?: string;
   email: string;
+  phone?: string;
+  portfolioUrl?: string;
+  avatarUrl?: string;
   resumeUrl: string;
   isOpenToWork: boolean;
   statusText: string;
+  workPreference?: string;
   testingPhilosophy: string;
 }
 

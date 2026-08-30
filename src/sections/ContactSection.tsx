@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, FileDown, Send, CheckCircle2, Copy, Check, MessageSquare } from 'lucide-react';
+import { Mail, FileDown, Send, CheckCircle2, Copy, Check, MessageSquare, Phone } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { personalInfo } from '../data/portfolioData';
 import { SectionHeading } from '../components/SectionHeading';
@@ -19,11 +19,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personalInfo.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(personalInfo.phone || '+91 9668738425');
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2000);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -42,11 +49,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
       } catch {
         // fallback
       }
-    }, 600);
+    }, 1000);
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24 bg-slate-900/60 relative">
+    <section id="contact" className="py-20 sm:py-28 bg-slate-950/60 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <SectionHeading
@@ -73,12 +80,37 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
                   Connect Directly with Me
                 </h3>
                 <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                  Based in {personalInfo.location}. Open to full-time Software QA Engineer roles (Remote, Hybrid, or On-site).
+                  Currently based in {personalInfo.location}. <strong>Open to work for any location in India (On-Site or Remote)</strong> with immediate availability.
                 </p>
               </div>
 
               {/* Direct Buttons */}
               <div className="space-y-2.5 sm:space-y-3">
+                {/* Mobile Phone Number Button */}
+                <div className="w-full flex items-center justify-between p-3 sm:p-3.5 rounded-xl border border-slate-700 bg-slate-900 text-white text-xs font-semibold gap-2">
+                  <a
+                    href={`tel:${personalInfo.phone || '+919668738425'}`}
+                    className="flex items-center gap-2.5 sm:gap-3 truncate hover:text-emerald-400 transition-colors"
+                  >
+                    <div className="p-2 rounded-lg bg-emerald-600/20 text-emerald-400 shrink-0">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div className="truncate text-left">
+                      <span className="block font-bold">Mobile Phone</span>
+                      <span className="text-[10px] sm:text-[11px] text-emerald-300 font-mono truncate block">
+                        {personalInfo.phone || '+91 9668738425'}
+                      </span>
+                    </div>
+                  </a>
+                  <button
+                    onClick={handleCopyPhone}
+                    className="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-emerald-300 font-mono text-[11px] flex items-center gap-1 border border-slate-700 transition-colors shrink-0 cursor-pointer"
+                  >
+                    {copiedPhone ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                    <span>{copiedPhone ? 'Copied' : 'Copy'}</span>
+                  </button>
+                </div>
+
                 {/* LinkedIn Button */}
                 <a
                   href={personalInfo.linkedinUrl}
@@ -100,7 +132,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
 
                 {/* Email Copy Button */}
                 <div className="w-full flex items-center justify-between p-3 sm:p-3.5 rounded-xl border border-slate-700 bg-slate-900 text-white text-xs font-semibold gap-2">
-                  <div className="flex items-center gap-2.5 sm:gap-3 truncate">
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    className="flex items-center gap-2.5 sm:gap-3 truncate hover:text-cyan-400 transition-colors"
+                  >
                     <div className="p-2 rounded-lg bg-cyan-600/20 text-cyan-400 shrink-0">
                       <Mail className="w-4 h-4" />
                     </div>
@@ -110,10 +145,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
                         {personalInfo.email}
                       </span>
                     </div>
-                  </div>
+                  </a>
                   <button
                     onClick={handleCopyEmail}
-                    className="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 font-mono text-[11px] flex items-center gap-1 border border-slate-700 transition-colors shrink-0"
+                    className="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 font-mono text-[11px] flex items-center gap-1 border border-slate-700 transition-colors shrink-0 cursor-pointer"
                   >
                     {copiedEmail ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
                     <span>{copiedEmail ? 'Copied' : 'Copy'}</span>
@@ -136,14 +171,35 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
                   </div>
                   <span className="text-emerald-400 group-hover:translate-x-0.5 transition-transform font-mono shrink-0 ml-1">↓</span>
                 </button>
+                {/* Location Item */}
+                <div className="w-full flex items-center justify-between p-3 sm:p-3.5 rounded-xl border border-cyan-500/40 bg-cyan-950/20 text-white text-xs font-semibold">
+                  <div className="flex items-center gap-2.5 sm:gap-3">
+                    <div className="p-2 rounded-lg bg-cyan-600/20 text-cyan-400 shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    </div>
+                    <div className="text-left">
+                      <span className="block font-bold text-cyan-300">Open to Any Location in India</span>
+                      <span className="text-[10px] sm:text-[11px] text-slate-300 font-mono">On-Site or Remote • Current: Mohali, India</span>
+                    </div>
+                  </div>
+                  <span className="px-2 py-0.5 rounded bg-emerald-950 text-[10px] text-emerald-400 font-mono border border-emerald-700/60">Ready to Join</span>
+                </div>
               </div>
 
-              <div className="p-3.5 sm:p-4 rounded-xl border border-slate-800 bg-slate-900/40 text-xs text-slate-400 space-y-1">
-                <span className="font-semibold text-slate-300 block text-[11px] sm:text-xs">Configuration Note:</span>
-                <p className="text-[10px] sm:text-[11px] leading-relaxed">
-                  Email and Resume links are centrally managed in <code className="text-cyan-400 font-mono">portfolioData.ts</code> for zero-friction maintenance.
-                </p>
+              {/* Embedded Google Map (Mohali Location) - Reference Style */}
+              <div className="h-44 sm:h-48 rounded-xl overflow-hidden border border-slate-800 shadow-inner">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109744.05905969579!2d76.69741822812666!3d30.698370329956275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fee906da6f81f%3A0x512998f16ce508d8!2sSahibzada%20Ajit%20Singh%20Nagar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1708520407953!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mohali Location Map"
+                />
               </div>
+
             </div>
 
           </div>

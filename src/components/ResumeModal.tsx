@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { X, FileDown, ShieldCheck, Mail, MapPin, Award, GraduationCap, Briefcase } from 'lucide-react';
-import { personalInfo, experienceTimeline, educationList, certificationsList } from '../data/portfolioData';
+import { X, FileDown, ShieldCheck, Mail, MapPin, Award, GraduationCap, Briefcase, ExternalLink } from 'lucide-react';
+import { personalInfo, experienceTimeline, educationList } from '../data/portfolioData';
 import { Badge } from './Badge';
 import { LinkedinIcon } from './Icons';
 
@@ -41,10 +41,10 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </div>
             <div>
               <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                Tirtha Mohanty — Resume
+                Tirtha Mohanty — ATS Resume
               </h3>
               <p className="text-xs text-slate-400 hidden sm:block">
-                Software QA Engineer • Manual & Automation Testing
+                Software QA Engineer • Original ATS-Formatted Resume
               </p>
             </div>
           </div>
@@ -72,6 +72,16 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 Web View
               </button>
             </div>
+
+            <a
+              href="/Tirtha_Mohanty_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg shadow-sm transition-all"
+              title="Open ATS PDF directly in new tab"
+            >
+              <ExternalLink className="w-3.5 h-3.5" /> Open Directly
+            </a>
 
             <a
               href="/Tirtha_Mohanty_Resume.pdf"
@@ -127,6 +137,18 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <MapPin className="w-3.5 h-3.5 text-cyan-400" /> {personalInfo.location}
               </span>
               <a
+                href="tel:+919668738425"
+                className="flex items-center gap-1 hover:text-emerald-400 transition-colors"
+              >
+                📞 +91 9668738425
+              </a>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className="flex items-center gap-1 hover:text-cyan-400 transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5 text-cyan-400" /> {personalInfo.email}
+              </a>
+              <a
                 href={personalInfo.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -135,10 +157,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <LinkedinIcon className="w-3.5 h-3.5 text-blue-400" /> LinkedIn Profile
               </a>
               <a
-                href={`mailto:${personalInfo.email}`}
-                className="flex items-center gap-1 hover:text-cyan-400 transition-colors"
+                href={personalInfo.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 hover:text-white transition-colors"
               >
-                <Mail className="w-3.5 h-3.5 text-cyan-400" /> {personalInfo.email}
+                <span className="font-bold">GH:</span> GitHub Profile
               </a>
             </div>
           </div>
@@ -146,34 +170,34 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Professional Summary */}
           <div className="space-y-2">
             <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">
-              Professional Summary
+              Summary
             </h2>
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Quality Assurance Engineer with 1.7 years of hands-on experience in manual and automated testing for Web and Mobile applications (Android & iOS). Proven proficiency in Selenium, Playwright, Appium, REST API validation in Postman, database testing (SQL & MongoDB), and Locust performance testing. Dual strength in Python backend development (FastAPI & Django) bridging the gap between testing and engineering.
+              Quality Assurance Engineer with hands-on experience of 1.7 years in manual and automation testing for web and mobile applications (Android & iOS). Skilled in Selenium, Playwright, Appium, API testing, Database testing and performance testing with strong knowledge of SDLC, STLC, and Agile methodologies. Adept at identifying defects, improving test efficiency, and ensuring high-quality software delivery.
             </p>
           </div>
 
           {/* Technical Skills Matrix */}
           <div className="space-y-3">
             <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">
-              Technical Skills & Competencies
+              Technical Skills
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
               <div className="p-3 rounded-lg border border-slate-800 bg-slate-900/60">
-                <span className="font-bold text-white block mb-1">Languages & Frameworks</span>
-                <p className="text-slate-400">Python, JavaScript, HTML5, CSS3, FastAPI, Django, Flask, Pytest</p>
+                <span className="font-bold text-white block mb-1">Languages</span>
+                <p className="text-slate-400">Python, JavaScript, HTML5, CSS3</p>
               </div>
               <div className="p-3 rounded-lg border border-slate-800 bg-slate-900/60">
                 <span className="font-bold text-white block mb-1">Testing & Automation</span>
-                <p className="text-slate-400">Selenium WebDriver, Playwright, Appium (Android/iOS), Manual, Functional, Non-Functional, UI, API & Performance Testing</p>
+                <p className="text-slate-400">Selenium, Playwright, Appium, Pytest, Manual Testing, Automation Testing, Functional Testing, Non-functional Testing, UI Testing, API Testing, Performance Testing</p>
               </div>
               <div className="p-3 rounded-lg border border-slate-800 bg-slate-900/60">
-                <span className="font-bold text-white block mb-1">API & Tools</span>
-                <p className="text-slate-400">Postman, Hoppscotch, Swagger, OWASP ZAP, Locust, Git, Bitbucket, Jira, MS Excel</p>
+                <span className="font-bold text-white block mb-1">Frameworks & Tools</span>
+                <p className="text-slate-400">Selenium WebDriver, FastAPI, Django, Postman, OWASP ZAP, Locust, Hoppscotch, Swagger, Git, Bitbucket, Jira, SQL, MS Excel</p>
               </div>
               <div className="p-3 rounded-lg border border-slate-800 bg-slate-900/60">
-                <span className="font-bold text-white block mb-1">Databases & Best Practices</span>
-                <p className="text-slate-400">MongoDB, DBeaver, SQL, Test Case Design, Bug Tracking, Agile / Scrum, Clean Code Practices</p>
+                <span className="font-bold text-white block mb-1">Database & Methodologies</span>
+                <p className="text-slate-400">MongoDB, DBeaver, Test Case Design, Bug Tracking, Agile Methodology, Debugging, Clean Code Practices</p>
               </div>
             </div>
           </div>
@@ -181,11 +205,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
           {/* Professional Experience */}
           <div className="space-y-4">
             <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold flex items-center gap-1.5">
-              <Briefcase className="w-4 h-4" /> Professional Experience
+              <Briefcase className="w-4 h-4" /> Experience
             </h2>
             <div className="space-y-6">
               {experienceTimeline.map((item) => (
-                <div key={item.id} className="space-y-2 border-l-2 border-slate-800 pl-4">
+                <div key={item.id} className="space-y-2 border-l-2 border-cyan-500/60 pl-4">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <h3 className="text-sm font-bold text-white">{item.role}</h3>
@@ -193,10 +217,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                     </div>
                     <span className="text-xs font-mono text-slate-400 mt-1 sm:mt-0">{item.period}</span>
                   </div>
-                  <p className="text-xs text-slate-300">{item.summary}</p>
                   <ul className="space-y-1 pt-1">
                     {item.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="text-xs text-slate-400 flex items-start gap-2">
+                      <li key={idx} className="text-xs text-slate-300 flex items-start gap-2">
                         <span className="text-cyan-400 mt-0.5">•</span>
                         <span>{resp}</span>
                       </li>
@@ -204,6 +227,39 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                   </ul>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Projects & Work Highlights */}
+          <div className="space-y-3 pt-2 border-t border-slate-800">
+            <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">
+              Projects & Work Highlights
+            </h2>
+            <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/50 space-y-2 text-xs">
+              <div className="flex items-start gap-2 text-slate-300">
+                <span className="text-cyan-400 font-bold">•</span>
+                <span>Developed automated test scripts using Selenium, Playwright and Pytest, reducing manual effort and improving reliability.</span>
+              </div>
+              <div className="flex items-start gap-2 text-slate-300">
+                <span className="text-cyan-400 font-bold">•</span>
+                <span>Tested AI applications for response accuracy, relevance, and hallucinations.</span>
+              </div>
+              <div className="flex items-start gap-2 text-slate-300">
+                <span className="text-cyan-400 font-bold">•</span>
+                <span>Built REST APIs using FastAPI and Django enhancing backend development skills.</span>
+              </div>
+              <div className="flex items-start gap-2 text-slate-300">
+                <span className="text-cyan-400 font-bold">•</span>
+                <span>Implemented hybrid testing frameworks for scalable automation testing.</span>
+              </div>
+              <div className="flex items-start gap-2 text-slate-300">
+                <span className="text-cyan-400 font-bold">•</span>
+                <span>Conducted performance and security testing using Locust and OWASP ZAP.</span>
+              </div>
+              <div className="flex items-start gap-2 text-slate-300">
+                <span className="text-cyan-400 font-bold">•</span>
+                <span>Improved defect detection and reporting processes, enhancing overall product quality.</span>
+              </div>
             </div>
           </div>
 
@@ -225,22 +281,36 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
               </div>
             </div>
 
-            {/* Certifications */}
-            <div className="space-y-3">
-              <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold flex items-center gap-1.5">
-                <Award className="w-4 h-4" /> Certifications
-              </h2>
-              <div className="space-y-3">
-                {certificationsList.map((cert) => (
-                  <div key={cert.id} className="p-3 rounded-lg border border-slate-800 bg-slate-900/50 space-y-1">
-                    <div className="flex items-center justify-between">
-                      <h3 className="text-xs font-bold text-white">{cert.name}</h3>
-                      <Badge variant="cyan" size="sm">{cert.status}</Badge>
-                    </div>
-                    <p className="text-xs text-slate-400">{cert.issuer}</p>
-                    <p className="text-[11px] text-slate-400">{cert.description}</p>
-                  </div>
-                ))}
+            {/* Certifications & Additional Info */}
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold flex items-center gap-1.5">
+                  <Award className="w-4 h-4" /> Certifications
+                </h2>
+                <div className="p-3 rounded-lg border border-slate-800 bg-slate-900/50 flex items-center justify-between">
+                  <span className="text-xs font-bold text-white">ISTQB Certification</span>
+                  <Badge variant="cyan" size="sm">In Progress</Badge>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <h2 className="text-xs font-mono uppercase tracking-wider text-cyan-400 font-bold">
+                  Additional Information
+                </h2>
+                <ul className="space-y-1.5 text-xs text-slate-300">
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-cyan-400 font-bold">•</span>
+                    <span>Strong interest in Python programming and backend development.</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-cyan-400 font-bold">•</span>
+                    <span>Experience in both QA and development roles, bridging the gap between testing and engineering.</span>
+                  </li>
+                  <li className="flex items-start gap-1.5">
+                    <span className="text-cyan-400 font-bold">•</span>
+                    <span>Passionate about writing clean, maintainable, and scalable code.</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -252,11 +322,11 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         {/* Modal Footer */}
         <div className="sticky bottom-0 z-20 p-4 sm:p-5 bg-slate-900/95 border-t border-slate-800 backdrop-blur-md flex items-center justify-between">
           <span className="text-xs text-slate-500">
-            Sanitized Portfolio Case Study • Tirtha Sarathi Mohanty
+            QA Engineering Portfolio • Tirtha Sarathi Mohanty
           </span>
           <button
             onClick={onClose}
-            className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700"
+            className="px-4 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 cursor-pointer"
           >
             Close
           </button>

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
-import { Play, FileDown, ArrowRight, Terminal, RefreshCw, Activity, Cpu, Layers } from 'lucide-react';
+import { Play, FileDown, ArrowRight, Terminal, RefreshCw, Activity, Cpu, Layers, MapPin } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
-import { ToolLogo } from '../components/Icons';
+import { ToolLogo, GithubIcon, LinkedinIcon } from '../components/Icons';
 
 interface HeroSectionProps {
   onOpenResume: () => void;
+  onNavigate?: (tab: 'home' | 'about' | 'skills' | 'projects' | 'labs' | 'contact' | 'all') => void;
 }
 
 type TestTab = 'playwright' | 'appium' | 'api' | 'locust';
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume, onNavigate }) => {
   const [isRunning, setIsRunning] = useState(false);
   const [runProgress, setRunProgress] = useState(100);
   const [activeTab, setActiveTab] = useState<TestTab>('playwright');
@@ -29,10 +30,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
         "[SUCCESS] 24/24 E2E scenarios passed with 0 flaky assertions."
       ],
       runSteps: [
-        { p: 25, log: "[STEP 1/4] Spawning Chromium context & injecting session cookies..." },
-        { p: 55, log: "[STEP 2/4] Executing Page Object Model (POM) locators for cart & checkout..." },
-        { p: 85, log: "[STEP 3/4] Asserting simulated order notification & account update..." },
-        { p: 100, log: "[SUCCESS] 24 passed in 1.18s • 100% assertions verified cleanly." }
+        { p: 20, log: "[PLAYWRIGHT] Launching browser engine (chromium v128)..." },
+        { p: 45, log: "[PASS] ✓ [web] › test_auth.py:12 › test_valid_user_login (85ms)" },
+        { p: 70, log: "[PASS] ✓ [web] › test_cart.py:34 › test_add_to_cart_state_persist (110ms)" },
+        { p: 90, log: "[PASS] ✓ [web] › test_checkout.py:78 › test_demo_account_update (240ms)" },
+        { p: 100, log: "[SUCCESS] 24/24 E2E scenarios passed with 0 flaky assertions." }
       ]
     },
     appium: {
@@ -126,7 +128,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
   return (
     <section
       id="hero"
-      className="relative min-h-[90vh] pt-28 sm:pt-32 md:pt-36 pb-16 sm:pb-24 flex items-center justify-center overflow-hidden bg-transparent"
+      className="relative pt-4 sm:pt-6 pb-6 sm:pb-8 flex items-center justify-center overflow-hidden bg-transparent"
     >
       {/* Ambient Background Glow Elements */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[650px] h-[250px] sm:h-[350px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -140,20 +142,28 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
           {/* Left Column: Headline, Bio & Action Buttons */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
-            {/* Clean Status Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 backdrop-blur-md shadow-sm">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-              <span className="text-xs font-semibold text-emerald-300 tracking-wide uppercase font-mono">
-                {personalInfo.statusText}
-              </span>
+            {/* Clean Status Pills: Available + Open to Any Location in India */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 backdrop-blur-md shadow-sm">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                <span className="text-xs font-semibold text-emerald-300 tracking-wide font-mono">
+                  Available for QA Roles
+                </span>
+              </div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/40 bg-cyan-950/40 backdrop-blur-md shadow-sm">
+                <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                <span className="text-xs font-semibold text-cyan-300 tracking-wide font-mono">
+                  Open to Work Anywhere in India • On-Site / Remote
+                </span>
+              </div>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-2">
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
-                Hi, I'm <span className="gradient-text-cyan">{personalInfo.name}</span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
+                <span className="text-cyan-400">Hello, I'm</span> {personalInfo.name}
               </h1>
-              <p className="text-xl sm:text-2xl font-bold text-slate-200 tracking-tight">
+              <p className="text-xl sm:text-2xl lg:text-3xl font-light text-slate-300 tracking-tight">
                 {personalInfo.headline}
               </p>
             </div>
@@ -164,35 +174,56 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-1">
-              <a
-                href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 rounded-xl shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+              <button
+                onClick={() => onNavigate ? onNavigate('projects') : window.location.assign('#projects')}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-lg shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
               >
-                <span>View My Work</span>
+                <span>View Projects</span>
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </button>
+
+              <button
+                onClick={() => onNavigate ? onNavigate('contact') : window.location.assign('#contact')}
+                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 rounded-lg backdrop-blur-sm transition-all cursor-pointer"
+              >
+                <span>Get in Touch</span>
+              </button>
 
               <button
                 onClick={onOpenResume}
-                className="inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 text-xs sm:text-sm font-semibold text-slate-200 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 rounded-xl backdrop-blur-sm transition-all"
+                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3 text-xs sm:text-sm font-semibold text-slate-300 hover:text-cyan-400 bg-slate-950/60 hover:bg-slate-900 border border-slate-800 rounded-lg transition-all cursor-pointer"
               >
                 <FileDown className="w-4 h-4 text-cyan-400" />
-                <span>Download Resume</span>
+                <span>Resume</span>
               </button>
+            </div>
 
+            {/* Social Links Pills */}
+            <div className="flex items-center justify-center lg:justify-start gap-3 pt-2">
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-3.5 text-xs sm:text-sm font-semibold text-slate-300 hover:text-cyan-400 transition-colors"
+                href={personalInfo.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-lg border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-white hover:border-slate-700 transition-all"
+                aria-label="GitHub Profile"
               >
-                <span>Let's Connect</span>
-                <span className="font-mono text-cyan-400">→</span>
+                <GithubIcon className="w-4 h-4" />
+              </a>
+              <a
+                href={personalInfo.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-lg border border-slate-800 bg-slate-900/80 hover:bg-slate-800 text-slate-300 hover:text-blue-400 hover:border-blue-500/40 transition-all"
+                aria-label="LinkedIn Profile"
+              >
+                <LinkedinIcon className="w-4 h-4" />
               </a>
             </div>
 
             {/* Quick Skills highlights with real brand logos */}
             <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-1.5 sm:gap-2">
-              <span className="text-[11px] font-mono text-slate-500 mr-1 sm:mr-2">EXPERTISE:</span>
+              <span className="text-[11px] font-mono text-slate-500 mr-1 sm:mr-2">CORE QA:</span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-cyan-300">
                 <ToolLogo name="Selenium" className="w-3.5 h-3.5" /> Selenium
               </span>
@@ -205,14 +236,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenResume }) => {
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-blue-300">
                 <ToolLogo name="Python" className="w-3.5 h-3.5" /> Python
               </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-teal-300">
-                <ToolLogo name="FastAPI" className="w-3.5 h-3.5" /> FastAPI
-              </span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-orange-300">
                 <ToolLogo name="Postman" className="w-3.5 h-3.5" /> Postman
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-lime-300">
-                <ToolLogo name="Locust" className="w-3.5 h-3.5" /> Locust
               </span>
             </div>
 

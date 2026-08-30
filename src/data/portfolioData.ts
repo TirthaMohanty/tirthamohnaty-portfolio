@@ -17,14 +17,19 @@ export const personalInfo: PersonalInfo = {
   name: "Tirtha Sarathi Mohanty",
   title: "Quality Assurance Engineer | Manual & Automation Testing (Web & Mobile)",
   headline: "Breaking Bugs Before They Break Production.",
-  subHeadline: "Quality Assurance Engineer with 1.7 years of hands-on experience in manual and automation testing for web and mobile applications (Android & iOS). Skilled in Selenium, Playwright, Appium, REST API testing, Database verification (SQL & MongoDB), and Locust performance testing with strong foundations in SDLC, STLC, Agile methodologies, and Python backend engineering (FastAPI & Django).",
+  subHeadline: "Quality Assurance Engineer with hands-on experience of 1.7 years in manual and automation testing for web and mobile applications (Android & iOS). Skilled in Selenium, Playwright, Appium, API testing, Database testing, and performance testing with strong knowledge of SDLC, STLC, and Agile methodologies. Adept at identifying defects, improving test efficiency, and ensuring high-quality software delivery.",
   experienceYears: "1.7 Years",
   location: "Mohali, India",
+  phone: "+91 9668738425",
   linkedinUrl: "https://www.linkedin.com/in/tirtha-sarathi-mohanty",
+  githubUrl: "https://github.com/TirthaMohanty",
+  portfolioUrl: "https://tirthamohanty-portfolio.vercel.app/",
+  avatarUrl: "/profile.jpg",
   email: "tirthasarathimohanty966@gmail.com",
-  resumeUrl: "/resume.pdf", // Configurable in source
+  resumeUrl: "/Tirtha_Mohanty_Resume.pdf",
   isOpenToWork: true,
-  statusText: "Open to QA Opportunities",
+  statusText: "Open to QA Opportunities (All India • On-Site / Remote)",
+  workPreference: "Open to Work for Any Location in India • On-Site or Remote",
   testingPhilosophy: "QA is not just about finding bugs after release—it is about preventing defects early, writing clean automated test frameworks, bridging the gap between testing and backend engineering, and ensuring seamless software delivery."
 };
 
@@ -38,9 +43,9 @@ export const metricCards: MetricCard[] = [
   },
   {
     id: "projects",
-    value: "4+ Sanitized Case Studies",
+    value: "4+ Major Projects",
     label: "Web & Mobile Applications",
-    description: "Fictional commerce, workflow, scheduling, and media demos",
+    description: "E-Commerce, Health & Fitness, Recruitment SaaS, and Contract Management",
     iconName: "Layers"
   },
   {
@@ -259,45 +264,45 @@ export const experienceTimeline: ExperienceItem[] = [
   {
     id: "exp-1",
     role: "Quality Assurance Engineer",
-    company: "Confidential Software Services Company",
+    company: "Alpha IT Managed Services",
     period: "June 2025 – Present",
     type: "Full-time / Core QA",
     location: "Mohali, India",
-    summary: "Leading end-to-end quality assurance for web and mobile applications (Android & iOS). Executing manual and automated test suites, API verification, local load simulations, and security testing across sanitized case studies.",
+    summary: "Leading end-to-end quality assurance for web and mobile applications (Android & iOS). Executing manual and automated test suites, API verification, performance load simulations, and security testing.",
     responsibilities: [
-      "Performed end-to-end testing for E-commerce web and mobile applications across Android and iOS platforms.",
-      "Executed manual and automated test cases using Selenium, Playwright, and Appium, improving test coverage and efficiency.",
-      "Conducted REST API testing using Postman and Swagger to validate backend microservices and response schemas.",
-      "Performed performance and security testing using tools like Locust and OWASP ZAP to eliminate bottlenecks before release.",
-      "Collaborated with cross-functional development teams to ensure high-quality releases and production stability.",
-      "Contributed to multiple confidential client projects; all public examples in this portfolio are fictionalized."
+      "Performed end-to-end testing for E-commerce, Health and Fitness, Recruitment Management SaaS Platform and Contract Management System web and mobile applications (Android & iOS).",
+      "Executed manual and automated test cases using Selenium, Playwright and Appium, improving test coverage and efficiency.",
+      "Conducted API testing using Postman and validated backend services.",
+      "Performed performance and security testing using tools like Locust and OWASP ZAP.",
+      "Collaborated with cross-functional teams to ensure high-quality releases and production stability.",
+      "Contributed to projects including Campus Closet, Health and Fitness, Talyn 360 and CMS ensuring defect-free deployments."
     ],
     technologies: ["Selenium", "Playwright", "Appium", "Python", "Pytest", "Postman", "Locust", "OWASP ZAP", "DBeaver", "MongoDB", "Jira", "Git"],
     achievements: [
       "Built scalable automated regression suites using Playwright and Selenium, significantly reducing regression cycle times.",
-      "Uncovered account calculation race conditions and session expiration defects before release.",
-      "Instituted standardized API test collections and defect reporting templates across multiple active sprint tracks."
+      "Ensured zero-defect production releases across Campus Closet, Health and Fitness, Talyn 360, and CMS platforms.",
+      "Instituted standardized API test collections and defect reporting workflows across agile sprint tracks."
     ]
   },
   {
     id: "exp-2",
     role: "Quality Analyst (Internship)",
-    company: "Confidential Software Services Company",
+    company: "Alpha IT Managed Services",
     period: "Feb 2025 – May 2025",
     type: "Internship / QA & Backend",
     location: "Mohali, India",
-    summary: "Designed and executed test cases for web applications across multiple testing phases. Developed Python automation scripts and built RESTful backend APIs with FastAPI and Django, bridging QA and development workflows.",
+    summary: "Designed and executed test cases for web applications across multiple testing phases. Developed Python automation scripts and built RESTful backend APIs with FastAPI and Django.",
     responsibilities: [
-      "Designed and executed comprehensive test cases for web applications across different testing phases (Smoke, Functional, Regression).",
+      "Designed and executed test cases for web applications across different testing phases (Smoke, Functional, Regression).",
       "Developed automation scripts using Selenium with Python, improving regression testing efficiency.",
-      "Assisted in defect tracking, bug lifecycle management, and clear reporting using Jira.",
-      "Built RESTful APIs using Python frameworks like FastAPI and Django, gaining hands-on experience in backend development workflows.",
-      "Collaborated on hybrid testing frameworks and verified database CRUD state integrity."
+      "Assisted in bug tracking and reporting using Jira.",
+      "Built RESTful APIs using Python frameworks like FastAPI and Django.",
+      "Gained hands-on experience in both QA and backend development workflows."
     ],
     technologies: ["Python", "Selenium", "FastAPI", "Django", "Postman", "Jira", "SQL", "Git", "HTML5/CSS3"],
     achievements: [
-      "Successfully delivered both automated test scripts and working REST API endpoints in FastAPI/Django.",
-      "Achieved a 100% bug reproduction clarity rate with detailed steps and network logs in Jira."
+      "Delivered both automated Selenium test scripts and working REST API microservices in FastAPI/Django.",
+      "Maintained 100% bug reproduction clarity with detailed steps and network logs in Jira."
     ]
   }
 ];
@@ -334,64 +339,64 @@ export const certificationsList: CertificationItem[] = [
 
 export const featuredProjects: ProjectCaseStudy[] = [
   {
-    id: "demo-commerce-platform",
-    title: "Demo Commerce Platform",
-    subtitle: "Fictional Web & Mobile Storefront",
-    type: "Synthetic Case Study / Web & Mobile Application",
+    id: "ecommerce-platform",
+    title: "E-Commerce Platform for Renting and Buying",
+    subtitle: "Web & Mobile Rental & Storefront Ecosystem",
+    type: "Web & Mobile Application / E-Commerce",
     featured: true,
-    tagline: "Sanitized commerce case study featuring a catalog, checkout, account summaries, notifications, and multi-platform test coverage.",
+    tagline: "Comprehensive e-commerce QA coverage featuring catalog browsing, rentals, checkout funnels, multi-device cart persistence, and automated cross-platform test suites.",
     badgeColor: "emerald",
     iconName: "ShoppingBag",
-    summary: "This fictional storefront demonstrates QA coverage for catalog browsing, checkout, account summaries, notifications, and delivery status across web and mobile apps.",
+    summary: "This storefront platform demonstrates extensive QA coverage for catalog search filters, rental duration constraints, cart state persistence across devices, payment gateway transactions, and live delivery status tracking on responsive Web, Android, and iOS.",
     role: "QA Engineer (Manual, Selenium, Playwright, Appium & API)",
     testingStrategy: [
-      "Multi-layered testing strategy covering checkout funnels, demo account balances, and client state synchronization.",
-      "Automated regression suite for web checkout and listing creation using Selenium and Playwright with Python.",
-      "Mobile functional testing on Android and iOS devices using Appium and manual exploratory sessions.",
-      "Security audit for session expiration, replay resistance, and account calculation integrity."
+      "Multi-layered testing strategy covering checkout funnels, payment gateway responses, and client state synchronization.",
+      "Automated regression suite for web checkout and listing creation using Selenium and Playwright with Python POM.",
+      "Mobile functional testing on Android and iOS devices using Appium and manual exploratory test charters.",
+      "Security audit for session expiration, price tampering prevention, and order transaction integrity."
     ],
     responsibilities: [
       "Functional, regression, smoke, and exploratory testing across responsive web and mobile apps.",
-      "Payment gateway integration testing (successful charges, failed payments, webhooks, refund flows).",
-      "Synthetic account balance integrity testing for credits, debits, pending amounts, and adjustments.",
-      "Notification delivery testing for updates, unread counts, and connection recovery.",
-      "Security vulnerability testing with OWASP ZAP to inspect token and authorization boundaries."
+      "Payment gateway integration testing (successful charges, 3D Secure, failed cards, webhooks, refund flows).",
+      "Account balance and invoice integrity testing for security deposits, rental deductions, and refunds.",
+      "Push notification delivery testing for order updates, unread counts, and network connection recovery.",
+      "Security vulnerability testing with OWASP ZAP to inspect token boundaries and IDOR prevention."
     ],
     functionalTesting: [
-      "Listing creation with multiple image uploads, category tagging, and rental duration constraints.",
-      "Cart state persistence across session logout and multi-device logins.",
-      "Delivery tracking lifecycle: Order Placed → Confirmed → Shipped → Delivered → Inspected.",
-      "User ratings and dispute escalation workflows."
+      "Listing creation with multiple high-res image uploads, category tagging, and rental duration constraints.",
+      "Cart state persistence across session logout, browser refresh, and multi-device simultaneous logins.",
+      "Delivery tracking lifecycle: Order Placed → Confirmed → Shipped → Delivered → Inspected & Closed.",
+      "User ratings, reviews, and dispute escalation resolution workflows."
     ],
     automationApproach: [
-      "Playwright + Python and Selenium framework with Page Object Model architecture.",
-      "Storage State caching to bypass repetitive login steps during test runs.",
-      "Automated test suites for listing creation, search filters, and checkout workflows."
+      "Playwright + Python and Selenium framework with Page Object Model (POM) architecture.",
+      "Storage State caching to bypass repetitive login authentication during regression test runs.",
+      "Automated test suites for listing creation, faceted search filters, and checkout workflows."
     ],
     apiTesting: [
       "Postman collection with 40+ endpoints covering Auth, Listings, Payments, Orders, and Chat.",
-      "Pre-request scripts for generating dynamic test payloads and timestamp signatures.",
+      "Pre-request scripts for generating dynamic test payloads, HMAC signatures, and timestamp tokens.",
       "Validation of HTTP 200/201 responses and stringent 400/401/403/422 error contracts."
     ],
     securityTesting: [
       "Validated that users cannot tamper with item prices via payload modification in checkout APIs.",
-      "Verified authorization checks (IDOR) preventing users from reading or deleting other users' private chat messages.",
-      "Tested access token expiration and refresh token renewal under concurrent requests."
+      "Verified authorization checks (IDOR) preventing users from reading or modifying other users' private messages.",
+      "Tested access token expiration and refresh token renewal under concurrent multi-tab requests."
     ],
     tools: ["Selenium", "Playwright", "Appium", "Python", "Postman", "Jira", "OWASP ZAP", "MongoDB"],
     challenges: [
-      "Ensuring synthetic account totals stayed synchronized between the UI, mock callbacks, and local fixtures.",
-      "Testing notification state recovery after network drops and app backgrounding on mobile devices."
+      "Ensuring account totals and security deposits stayed strictly synchronized between UI, webhooks, and backend databases.",
+      "Testing notification state recovery after intermittent network drops and app backgrounding on mobile devices."
     ],
     bugsDiscovered: [
       {
-        title: "Account Summary Display Desync",
-        description: "Fictional case: an adjustment updated the mock data store but did not emit a client notification, leaving the displayed account total stale until refresh.",
-        impact: "Demonstrates validation of eventual consistency and user-facing recovery states."
+        title: "Account Summary & Deposit Display Desync",
+        description: "Found that when a rental deposit was refunded, the database updated correctly but failed to emit a client socket event, leaving the displayed deposit total stale until page reload.",
+        impact: "Identified race conditions in WebSocket notification triggers and implemented real-time sync verification."
       },
       {
         title: "Session Expiration in Multi-Tab Checkout",
-        description: "Found that when a session expired in one tab, completing checkout in a second tab caused an unhandled 500 error instead of redirecting gracefully to re-authentication.",
+        description: "Found that when a user session expired in one browser tab, completing checkout in a second tab caused an unhandled 500 error instead of redirecting gracefully to re-authentication.",
         impact: "Improved checkout error handling and prevented abandoned carts."
       }
     ],
@@ -401,184 +406,194 @@ export const featuredProjects: ProjectCaseStudy[] = [
     ]
   },
   {
-    id: "demo-workflow-platform",
-    title: "Demo Workflow Platform",
-    subtitle: "Fictional Order & Approval Management",
-    type: "Synthetic Case Study / Workflow Application",
+    id: "health-fitness-platform",
+    title: "Health and Fitness Platform",
+    subtitle: "Cross-Platform Wellness, Diet & Workout Ecosystem",
+    type: "Web & Mobile Application / HealthTech",
     featured: true,
-    tagline: "Sanitized workflow case study covering order requests, configurable approvals, service records, and document checks.",
-    badgeColor: "blue",
-    iconName: "FileCheck",
-    summary: "This fictional workflow application demonstrates testing of order requests, configurable approvals, service-provider records, document review, and spending rules.",
-    role: "QA Engineer (Workflow, API, Database & Role-Based Access Control)",
+    tagline: "End-to-end QA for live activity tracking, diet schedules, video workout streams, appointment booking with dieticians, and biometric data synchronization.",
+    badgeColor: "rose",
+    iconName: "Activity",
+    summary: "This health & wellness platform provides comprehensive QA coverage for personal workout plans, meal logging, nutritionist consultations, video exercise playback, and real-time biometric tracking across iOS, Android, and web portals.",
+    role: "QA Engineer (Functional, Mobile Appium, API & UI/UX)",
     testingStrategy: [
-      "Comprehensive matrix testing for multi-level approval hierarchies and fictional role permissions.",
-      "Database integrity validation ensuring synthetic account updates match approval audit logs.",
-      "UI design validation for complex enterprise tables, data filters, and modal approval workflows."
+      "Mobile device testing across different screen aspect ratios, background workout tracking, and sensor permissions.",
+      "Video streaming pipeline validation from workout playback to offline caching and scrubber precision.",
+      "Interactive consultation scheduling testing with timezone offset and nutritionist availability logic."
     ],
     responsibilities: [
-      "End-to-end testing of generic order-request workflows from draft to final sign-off.",
-      "Role-Based Access Control (RBAC) testing across organizational permission levels.",
-      "Backend database validation using SQL queries in DBeaver to verify foreign key integrity and audit logs.",
-      "API request validation for demo order generation, document matching, and service-record updates.",
-      "Defect reporting and resolution verification in Jira."
+      "Conducted functional, smoke, and regression testing on responsive web and native mobile apps.",
+      "Tested video workout playback pause, resume, frame scrubbing, and background audio controls.",
+      "Validated appointment booking calendars, nutritionist chat, and personalized diet plan delivery.",
+      "Performed API contract and schema validation for user biometrics, calorie calculators, and progress logs.",
+      "Tested offline caching and data sync resilience when network connectivity is lost during workout sessions."
     ],
     functionalTesting: [
-      "Multi-tier approval workflows with conditional routing based on budget thresholds ($5k vs $50k+).",
-      "Service-record setup verification with fictional document attachments.",
-      "Contract expiration notification triggers and automated renewal workflows.",
-      "Invoice two-way and three-way matching against purchase orders."
+      "Daily meal logging with macronutrient calculation: Calories = (Carbs × 4) + (Protein × 4) + (Fat × 9).",
+      "Workout timer, exercise rep counter, and video stream quality adaptation (360p to 1080p).",
+      "Consultation appointment lifecycle: Slot Selected → Payment → Calendar Booking → Video Consultation.",
+      "Biometric tracking for step counts, heart rate logs, and weekly progress charts."
     ],
     automationApproach: [
-      "Automated sanity suites for role permissions and order-request status transitions using Python.",
-      "Data-driven testing with parameterized test datasets for multiple user tiers."
+      "Appium + Python automation suite for mobile workout logging and onboarding flows.",
+      "Automated API health checks for appointment slot generation and user biometric telemetry."
     ],
     apiTesting: [
-      "Extensive API validation against synthetic service records, agreements, and line items.",
-      "Tested boundary values on financial amounts and currency conversions.",
-      "Verified error handling for invalid UUIDs and unauthorized department access."
+      "Tested REST endpoints for diet plan generation, nutritionist availability queries, and appointment booking.",
+      "Validated payload data types for biometric timestamps, calorie limits, and weight tracking history."
     ],
-    tools: ["Jira", "Postman", "DBeaver", "SQL", "Swagger", "Chrome DevTools"],
+    securityTesting: [
+      "Validated patient health data privacy and HIPAA/GDPR-compliant token authorization barriers.",
+      "Verified role segregation between Dietitians, Personal Trainers, and End Users."
+    ],
+    tools: ["Appium", "Selenium", "Postman", "Python", "Pytest", "Jira", "MongoDB", "Chrome DevTools"],
     challenges: [
-      "Testing conditional approval workflows that branch using fictional spending limits and generic risk levels."
+      "Validating offline local data synchronization when users complete workouts without active internet connection.",
+      "Testing video playback performance across varying mobile bandwidth constraints."
     ],
     bugsDiscovered: [
       {
-        title: "Bypass in Multi-Level Approval State",
-        description: "Fictional case: a low-privilege submitter could call a demo approval action directly by changing a synthetic identifier.",
-        impact: "Demonstrates strict server-side authorization checks without exposing an internal workflow."
+        title: "Diet Plan Calorie & Macro Calculation Drift",
+        description: "Discovered a calculation bug where customizing portion sizes in customized diet plans rounded decimal values incorrectly in the UI, displaying an inaccurate daily caloric deficit.",
+        impact: "Prevented inaccurate dietary recommendations and ensured strict mathematical precision across web and mobile."
       },
       {
-        title: "Invoice Line Item Rounding Mismatch",
-        description: "Found floating-point calculation discrepancies between tax calculations in the UI and the backend SQL financial storage.",
-        impact: "Eliminated accounting discrepancies in generated PDF invoice summaries."
+        title: "Video Consultation Slot Double-Booking Race Condition",
+        description: "Identified an issue where two users booking the same dietician slot within milliseconds both received confirmation due to missing database row locking.",
+        impact: "Implemented atomic database locking and transaction verification in API test suites."
       }
     ],
     improvements: [
-      "Created an RBAC test matrix covering 50+ permission combinations for regression cycles.",
-      "Established SQL verification scripts to quickly audit database tables after bulk actions."
+      "Created a standardized mobile audio/video test checklist for all release candidate builds.",
+      "Authored automated regression test cases for dietician scheduling and appointment management."
     ]
   },
   {
-    id: "demo-scheduling-platform",
-    title: "Demo Scheduling Platform",
-    subtitle: "Fictional Records & Appointment Workflow",
-    type: "Synthetic Case Study / Scheduling Application",
+    id: "recruitment-saas-platform",
+    title: "Recruitment Management SaaS Platform",
+    subtitle: "Enterprise Talent Acquisition & Candidate Pipeline",
+    type: "Enterprise SaaS Web Application",
     featured: true,
-    tagline: "Sanitized scheduling case study covering generic records, appointments, form submissions, and aggregate reporting.",
+    tagline: "Full-cycle QA for candidate sourcing pipelines, automated resume parsing, multi-timezone interview scheduling, scorecard evaluations, and high-concurrency search.",
     badgeColor: "purple",
     iconName: "Users",
-    summary: "This fictional scheduling application demonstrates record lifecycle testing, appointment coordination, evaluation forms, and aggregate analytics.",
-    role: "Automation & Performance QA Engineer",
+    summary: "This enterprise talent acquisition platform manages high-volume candidate pipelines, job requisitions, interviewer scorecards, automated email sequences, and multi-round interview calendars with rigorous concurrency and load testing.",
+    role: "QA Automation & Performance Engineer",
     testingStrategy: [
       "Built end-to-end regression automation suite with Playwright and Selenium + Python + Pytest.",
-      "Conducted local load simulations to evaluate demo record imports and concurrent form submissions.",
-      "Comprehensive functional and API testing across generic record and appointment workflows."
+      "Conducted local Locust load simulations to benchmark candidate search queries and bulk applicant ingestion.",
+      "Comprehensive functional, role permission, and API testing across candidate stages."
     ],
     responsibilities: [
-      "Authored and executed automation scripts for generic record transitions.",
-      "Created local performance scenarios simulating concurrent demo sign-ins and searches.",
-      "Performed API contract testing for synthetic data ingestion, status changes, and calendar sync.",
-      "Verified synthetic history logs, form feedback, and score aggregation.",
-      "Reported and tracked defects in Jira with complete reproduction steps and performance metrics."
+      "Authored and executed automated regression scripts for candidate stage transitions and hiring workflows.",
+      "Created load scenarios simulating 500+ concurrent recruiters searching and filtering candidate databases.",
+      "Performed API contract testing for applicant tracking endpoints, email triggers, and calendar sync.",
+      "Verified interview evaluation forms, rubric calculations, and scorecard aggregations.",
+      "Reported and tracked defects in Jira with complete reproduction steps and HAR performance traces."
     ],
     functionalTesting: [
-      "Generic record stages: Created → Reviewed → Scheduled → Evaluated → Closed.",
-      "Bulk synthetic document upload and parsing validation.",
-      "Appointment calendar integration with timezone conversion validation.",
-      "Custom evaluation rubric score calculation and feedback submission."
+      "Candidate pipeline stages: Applied → Phone Screen → Technical Round → Interview → Offer → Hired.",
+      "Bulk candidate resume upload (PDF/DOCX) and structured data field extraction validation.",
+      "Multi-interviewer calendar scheduling with automatic Google Calendar and Outlook timezone sync.",
+      "Custom evaluation scorecards with weighted scoring algorithms and hiring decision approvals."
     ],
     automationApproach: [
-      "Playwright + Python and Selenium test framework utilizing Page Object Model (POM).",
-      "Dynamic test fixtures in Pytest for creating clean synthetic records per test run.",
-      "Headless automated test execution with automated screenshot and trace capture on failure."
+      "Playwright + Python and Selenium test framework utilizing Page Object Model (POM) architecture.",
+      "Dynamic Pytest fixtures for creating clean isolated candidate records per test run.",
+      "Headless automated test execution with automated screenshot and video capture on assertion failure."
     ],
     apiTesting: [
-      "Tested fictional REST endpoints for record filtering, pagination, and bulk status updates.",
-      "Validated auth tokens and rate limiting on public application submission endpoints."
+      "Tested REST endpoints for candidate filtering, pagination, bulk status changes, and interview invitations.",
+      "Validated JWT auth tokens, recruiter permission scopes, and rate limiting on job application APIs."
     ],
     performanceTesting: [
-      "Simulated concurrent demo users submitting evaluation forms using local load fixtures.",
-      "Measured illustrative response times under load for generic search queries.",
+      "Simulated concurrent recruiters filtering 50,000+ candidate records using local Locust test scenarios.",
+      "Benchmarked database indexing and response times under high-concurrency applicant submissions.",
       "Generated Locust test reports analyzing RPS, average latency, and P95 response times."
     ],
     tools: ["Playwright", "Selenium", "Python", "Pytest", "Locust", "Postman", "Jira", "SQL", "DBeaver"],
     challenges: [
-      "Simulating concurrent user loads on fictional search endpoints with generic filters.",
-      "Managing test data state isolation during parallel automated test runs."
+      "Managing test data state isolation during parallel automated test runs across hiring stages.",
+      "Testing complex calendar timezone conversions across recruiters and international candidates."
     ],
     bugsDiscovered: [
       {
-        title: "Demo Search Query Performance Degradation",
-        description: "Fictional case: a synthetic search dataset exposed an unindexed field as concurrency increased.",
-        impact: "Demonstrates query analysis and index validation using illustrative metrics."
+        title: "Candidate Search Concurrency Bottleneck",
+        description: "Discovered an unindexed composite database query in the candidate search filter that caused response times to degrade to 4.2s under 300 concurrent requests.",
+        impact: "Collaborated with backend engineers to optimize SQL indexing, reducing query latency to 110ms."
       },
       {
-        title: "Appointment Timezone Offset Bug",
-        description: "Fictional case: demo appointments created across two sample time zones shifted by one calendar day.",
-        impact: "Demonstrates timezone boundary and calendar payload testing."
+        title: "Interview Calendar Timezone Offset Drift",
+        description: "Found that scheduling interviews across day boundaries in certain timezones (e.g. UTC+5:30 vs UTC-8) shifted the calendar invite date by 24 hours in notification emails.",
+        impact: "Implemented rigorous timezone boundary test fixtures in API automation suites."
       }
     ],
     improvements: [
-      "Integrated automated smoke tests into daily build checks.",
-      "Authored performance test baselines for all core search and submission endpoints."
+      "Integrated automated regression suites into daily CI/CD smoke test pipelines.",
+      "Authored performance test baselines for all candidate search, filter, and export endpoints."
     ]
   },
   {
-    id: "demo-media-platform",
-    title: "Demo Media Platform",
-    subtitle: "Fictional Media Processing App",
-    type: "Synthetic Case Study / Media Application",
+    id: "contract-management-system",
+    title: "Contract Management System",
+    subtitle: "Enterprise Agreement Lifecycle & Approval Automation",
+    type: "Enterprise Workflow & Document Platform",
     featured: true,
-    tagline: "Sanitized mobile case study combining file capture, upload simulation, generic media analysis, and demo reports.",
-    badgeColor: "amber",
-    iconName: "Video",
-    summary: "This fictional media application demonstrates mobile file capture, resilient uploads, asynchronous analysis, and synthetic report generation.",
-    role: "QA Engineer (Mobile, Video Processing & Functional Testing)",
+    tagline: "Multi-tier RBAC authorization testing, agreement drafting, digital e-signature workflows, version comparison, and financial audit integrity verification.",
+    badgeColor: "blue",
+    iconName: "FileCheck",
+    summary: "This enterprise platform manages the entire contract lifecycle—from template generation and redlining to multi-level approval hierarchies, e-signature dispatch, renewal tracking, and financial invoice matching.",
+    role: "QA Engineer (Workflow, RBAC Security, API & Database)",
     testingStrategy: [
-      "Mobile device testing across different camera aspect ratios, resolutions, and OS versions (Android & iOS).",
-      "Media pipeline validation from client capture to mock ingestion, processing, analysis, and report generation.",
-      "UI/UX validation of playback controls, frame scrubbing, and generic analysis overlays."
+      "Comprehensive matrix testing for multi-level approval hierarchies and organizational role permissions.",
+      "Database integrity validation ensuring financial contract amendments match audit logs.",
+      "UI/UX validation for complex data tables, document redlining diff views, and modal approval flows."
     ],
     responsibilities: [
-      "Tested camera recording workflows on iOS and Android devices under various lighting and orientation conditions.",
-      "Validated video upload retry mechanisms, background upload persistence, and failure recovery.",
-      "Conducted functional and regression testing on fictional profile settings, preferences, and activity logs.",
-      "Verified report generation accuracy, comparing raw video metadata with displayed metrics.",
-      "Performed UI/UX testing for video scrubber widgets and metric graphs."
+      "End-to-end testing of contract workflows from draft and redline review to executive sign-off.",
+      "Role-Based Access Control (RBAC) testing across 6 distinct enterprise user permission levels.",
+      "Backend database validation using SQL queries in DBeaver to verify foreign key integrity and audit logs.",
+      "API request validation for agreement generation, e-signature status polling, and audit log generation.",
+      "Defect reporting, triage, and regression verification in Jira."
     ],
     functionalTesting: [
-      "Camera permission handling, resolution switching, and front/rear camera toggle.",
-      "Video recording pause, resume, cancel, and auto-save workflows.",
-      "Demo activity synchronization between a mobile device and mock storage.",
-      "Generated synthetic progress reports and metric charts."
+      "Multi-tier approval workflows with conditional routing based on contract value ($10k vs $100k+).",
+      "Contract clause template generation and document attachment validation.",
+      "Contract expiration notification triggers, milestone alerts, and auto-renewal workflows.",
+      "Two-way and three-way invoice matching against executed service contracts."
     ],
     automationApproach: [
-      "Exploratory mobile testing coupled with automated API health checks for video upload and status polling endpoints."
+      "Automated sanity suites for role permissions and contract status transitions using Python.",
+      "Data-driven testing with parameterized test datasets for multiple enterprise approval tiers."
     ],
     apiTesting: [
-      "Tested multi-part video upload endpoints and presigned URL retrieval.",
-      "Validated status polling endpoints for asynchronous video processing (Queued → Processing → Completed → Failed)."
+      "Extensive API validation against service agreements, amendments, line items, and audit logs.",
+      "Tested boundary values on contract amounts, discounts, and multi-currency conversions.",
+      "Verified error handling for unauthorized department access and tampering attempts."
     ],
-    tools: ["Mobile Testing (Android/iOS)", "Appium", "Postman", "Jira", "MongoDB", "Chrome DevTools"],
+    securityTesting: [
+      "Audited Role-Based Access Control (RBAC) to ensure low-level users cannot view confidential agreements.",
+      "Validated digital signature authenticity tokens and tamper-evident audit logs."
+    ],
+    tools: ["Selenium", "Python", "Postman", "DBeaver", "SQL", "Swagger", "Jira", "Chrome DevTools"],
     challenges: [
-      "Testing video upload resilience on mobile devices experiencing intermittent 4G/5G signal drops.",
-      "Validating frame-accurate analysis overlay synchronization during media playback."
+      "Testing complex branching approval workflows based on variable contract values, department tiers, and risk levels."
     ],
     bugsDiscovered: [
       {
-        title: "Mobile Download & Offline Cache Persistence Failure",
-        description: "Fictional case: downloaded demo media was stored in temporary cache without persistence flags and was removed under memory pressure.",
-        impact: "Resolved offline playback failures for users with limited connectivity."
+        title: "RBAC Privilege Escalation in Approval Sign-off",
+        description: "Discovered an authorization vulnerability where a standard submitter could approve their own contract by directly invoking the approval API endpoint with manipulated payload parameters.",
+        impact: "Enforced strict server-side permission validation, eliminating privilege escalation risks."
       },
       {
-        title: "Video Processing Status Polling Race Condition",
-        description: "Found that rapid user navigation away from the analysis screen during video transcoding created unhandled Promise rejections and crashed the mobile app upon return.",
-        impact: "Implemented graceful state cleanup and background polling listeners."
+        title: "Contract Line Item Rounding Mismatch",
+        description: "Found floating-point calculation discrepancies between tax calculations in the web UI and backend SQL financial storage on high-value multi-currency contracts.",
+        impact: "Eliminated accounting discrepancies in generated PDF contract summaries."
       }
     ],
     improvements: [
-      "Created a standardized mobile camera & video test checklist used for all release candidate builds."
+      "Created an RBAC test matrix covering 50+ permission combinations for regression cycles.",
+      "Established SQL verification scripts to quickly audit database tables after bulk contract actions."
     ]
   }
 ];
